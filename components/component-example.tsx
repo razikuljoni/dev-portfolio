@@ -1,5 +1,3 @@
-import FooterSection from "@/components/footer-section";
-import HeroSection from "@/components/hero-section";
 import {
     Activity,
     Component,
@@ -8,7 +6,7 @@ import {
     Package,
     ScrollText,
     SunMoon,
-} from 'lucide-react';
+  } from 'lucide-react';
   
   import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/dock';
   
@@ -63,14 +61,12 @@ import {
       href: '#',
     },
   ];
-
-export default function Page() {
-return <div>
-    <HeroSection />
-    <FooterSection />
-    <div className='absolute bottom-2 left-1/2 max-w-full -translate-x-1/2'>
-    <Dock  className='items-end pb-3'>
-          {data.map((item:any, idx: any) => (
+  
+  export function AppleStyleDock() {
+    return (
+     
+        <Dock className='items-end pb-3'>
+          {data.map((item, idx) => (
             <DockItem
               key={idx}
               className='aspect-square rounded-full bg-gray-200 dark:bg-neutral-800'
@@ -80,6 +76,6 @@ return <div>
             </DockItem>
           ))}
         </Dock>
-    </div>
-</div>;
-}
+    );
+  }
+  
