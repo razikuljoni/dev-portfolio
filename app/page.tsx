@@ -10,76 +10,36 @@ import {
     SunMoon,
 } from 'lucide-react';
   
-  import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/dock';
+  import Blogs from "../components/blogs-section";
+  import Experience from "../components/experience-section";
+  import GithubSection from "../components/github-section";
+  import Header from "../components/header-section";
+  import Projects from "../components/projects-section";
   
-  const data = [
-    {
-      title: 'Home',
-      icon: (
-        <HomeIcon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Products',
-      icon: (
-        <Package className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Components',
-      icon: (
-        <Component className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Activity',
-      icon: (
-        <Activity className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Change Log',
-      icon: (
-        <ScrollText className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Email',
-      icon: (
-        <Mail className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-    {
-      title: 'Theme',
-      icon: (
-        <SunMoon className='h-full w-full text-neutral-600 dark:text-neutral-300' />
-      ),
-      href: '#',
-    },
-  ];
-
 export default function Page() {
-return <div>
-    <HeroSection />
-    <FooterSection />
-    <div className='absolute bottom-2 left-1/2 max-w-full -translate-x-1/2'>
-    <Dock  className='items-end pb-3'>
-          {data.map((item:any, idx: any) => (
-            <DockItem
-              key={idx}
-              className='aspect-square rounded-full bg-gray-200 dark:bg-neutral-800'
-            >
-              <DockLabel>{item.title}</DockLabel>
-              <DockIcon>{item.icon}</DockIcon>
-            </DockItem>
-          ))}
-        </Dock>
-    </div>
-</div>;
+  return (
+    <>
+      <div className="relative grid min-h-screen grid-cols-[1fr_minmax(0,60rem)_1fr] grid-rows-[auto_1fr_auto]">
+        <div className="pointer-events-none relative -right-px col-start-1 row-span-full row-start-1 hidden border-x-[1.5px] border-x-(--pattern-border) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1.5px,transparent_0,transparent_50%)] bg-[length:6px_6px] bg-fixed md:block"></div>
+        <div className="pointer-events-none relative -left-px col-start-3 row-span-full row-start-1 hidden border-x-[1.5px] border-x-(--pattern-border) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1.5px,transparent_0,transparent_50%)] bg-[length:6px_6px] bg-fixed md:block"></div>
+        <div className="pointer-events-none relative -bottom-px col-span-full col-start-1 row-start-1 hidden h-[1.5px] bg-(--pattern-border) md:block"></div>
+
+        <div className="col-start-2 row-start-2">
+          <Header />
+
+          <main className="mt-10">
+            <div className="flex flex-col">
+              <HeroSection />
+              <Experience />
+              <Projects />
+              <Blogs />
+              <GithubSection />
+              <FooterSection />
+            </div>
+          </main>
+        </div>
+      </div>
+    </>
+  );
 }
+
