@@ -166,7 +166,7 @@ export default function Experience() {
                 type="button"
                 aria-expanded="false"
                 aria-controls="position-audoralabs-engineer"
-                aria-label="Expand Software Engineer at AudoraLabs"
+                aria-label="Expand Frontend Developer at HawkEyes Digital Monitoring Ltd."
                 className="flex w-full flex-col gap-2 p-3 text-left sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 sm:p-4 rounded-lg ring-offset-background outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-muted/30"
               >
                 <div className="flex w-full items-center justify-between gap-2 sm:min-w-0 sm:flex-1 sm:justify-start">
@@ -192,7 +192,7 @@ export default function Experience() {
                       Full-time
                     </span>
                     <p className="mt-0.5 text-sm text-muted-foreground">
-                      Software Engineer
+                      Frontend Developer
                     </p>
                   </div>
                   <span

@@ -13,7 +13,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="Email"
                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                href="mailto:contact.narsibhati@gmail.com"
+                href="mailto:contact.razikuljoni@gmail.com"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                href="https://github.com/narsibhati-dev"
+                href="https://github.com/razikuljoni"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                href="https://www.linkedin.com/in/narsibhati"
+                href="https://www.linkedin.com/in/razikuljoni"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="X"
                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                href="https://x.com/narsihq"
+                href="https://x.com/razikuljoni"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                href="https://youtube.com/@narsicreates"
+                href="https://youtube.com/@razikuljoni"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,21 +129,21 @@ export default function FooterSection() {
             </div>
           </section>
           <p className="text-sm text-muted-foreground">
-            Built by
+            Built by{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
               className="rounded font-medium text-foreground/90 underline decoration-border underline-offset-2 transition-colors hover:decoration-foreground/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-              href="https://x.com/narsihq"
+              href="https://x.com/razikuljoni"
             >
-              narsihq
+              razikuljoni
             </a>
             . The source code is available on
             <a
               target="_blank"
               rel="noopener noreferrer"
               className="rounded font-medium text-foreground/90 underline decoration-border underline-offset-2 transition-colors hover:decoration-foreground/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-              href="https://github.com/narsibhati-dev/narsibhati.com"
+              href="https://github.com/razikuljoni/razikuljoni.com"
             >
               GitHub
             </a>

@@ -7,7 +7,7 @@ export default function Header() {
           href="#"
         >
           <img
-            alt="Narsi Bhati Logo"
+            alt="MD Razikul Islam Joni Logo"
             loading="lazy"
             width="28"
             height="28"

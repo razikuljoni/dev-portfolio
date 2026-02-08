@@ -47,9 +47,9 @@ export default function GithubSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/20 hover:bg-muted hover:text-foreground"
-                href="https://github.com/narsibhati-dev"
+                href="https://github.com/razikuljoni"
               >
-                @narsibhati-dev
+                @razikuljoni
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
