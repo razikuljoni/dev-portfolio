@@ -43,13 +43,13 @@ export default function Experience() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <span className="font-semibold text-foreground">
-                      AudoraLabs
+                      HawkEyes Digital Monitoring Ltd.
                     </span>
                     <span className="ml-2 hidden rounded-md border border-border bg-muted/50 px-2 py-0.5 text-xs font-medium text-muted-foreground sm:inline-block">
                       Full-time
                     </span>
                     <p className="mt-0.5 text-sm text-muted-foreground">
-                      Founder
+                      Frontend Developer
                     </p>
                   </div>
                   <span
@@ -78,9 +78,9 @@ export default function Experience() {
                     Full-time
                   </span>
                   <span className="text-foreground tabular-nums">
-                    Aug 2025 – Present
+                    Feb 2024 – Present
                   </span>
-                  <span>Remote</span>
+                  <span>In-Office</span>
                   <span
                     className="hidden shrink-0 sm:mt-1 sm:block"
                     aria-hidden="true"
@@ -114,18 +114,16 @@ export default function Experience() {
                   <div className="border-t border-border/50 px-3 pt-2 pb-4 transition-opacity duration-150 sm:px-4 opacity-100">
                     <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
                       <li>
-                        Building a product studio focused on production-grade
-                        developer tools and media infrastructure.
+                        Developing and maintaining an inventory management
+                        system for efficient stock tracking and reporting.
                       </li>
                       <li>
-                        Shipping open-source starters and CLI tools
-                        (create-audora-next, NextBlog-Starter) to help teams
-                        ship better builds faster.
+                        Implementing dashboard features to visualize sales,
+                        inventory levels, and key performance metrics.
                       </li>
                       <li>
-                        Leading product and technical direction for Audora
-                        (WebRTC recording platform) and CoSketch (real-time
-                        collaborative canvas).
+                        Building and optimizing sales modules, including order
+                        processing, invoice generation, and customer management.
                       </li>
                     </ul>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -136,19 +134,13 @@ export default function Experience() {
                         TypeScript
                       </span>
                       <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
-                        Rust
+                        Ant Design
                       </span>
                       <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
-                        WebRTC
+                        Charts
                       </span>
                       <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
-                        PostgreSQL
-                      </span>
-                      <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
-                        Docker
-                      </span>
-                      <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
-                        AWS
+                        Google Maps
                       </span>
                       <span className="rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground">
                         GitHub Actions

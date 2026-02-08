@@ -63,11 +63,11 @@ export default function Projects() {
                           decoding="async"
                           data-nimg="1"
                           className="size-full object-cover"
-                          srcSet="
-                              /_next/image?url=%2Fimages%2Fprojects%2Faudora.webp&amp;w=1080&amp;q=75 1x,
-                              /_next/image?url=%2Fimages%2Fprojects%2Faudora.webp&amp;w=2048&amp;q=75 2x
-                            "
-                          src="/_next/image?url=%2Fimages%2Fprojects%2Faudora.webp&amp;w=2048&amp;q=75"
+                          //   srcSet="
+                          //       /_next/image?url=%2Fimages%2Fprojects%2Faudora.webp&amp;w=1080&amp;q=75 1x,
+                          //       /_next/image?url=%2Fimages%2Fprojects%2Faudora.webp&amp;w=2048&amp;q=75 2x
+                          //     "
+                          src="/images/bg1.webp"
                           style={{ color: "transparent" }}
                         />
                       </div>
@@ -185,11 +185,11 @@ export default function Projects() {
                           decoding="async"
                           data-nimg="1"
                           className="size-full object-cover"
-                          srcSet="
-                              /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=1080&amp;q=75 1x,
-                              /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75 2x
-                            "
-                          src="/_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75"
+                          //   srcSet="
+                          //       /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=1080&amp;q=75 1x,
+                          //       /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75 2x
+                          //     "
+                          src="/images/bg2.webp"
                           style={{ color: "transparent" }}
                         />
                       </div>
@@ -306,11 +306,11 @@ export default function Projects() {
                           decoding="async"
                           data-nimg="1"
                           className="size-full object-cover"
-                          srcSet="
-                              /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x,
-                              /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x
-                            "
-                          src="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75"
+                          //   srcSet="
+                          //       /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x,
+                          //       /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x
+                          //     "
+                          src="/images/bg3.webp"
                           style={{ color: "transparent" }}
                         />
                       </div>
@@ -427,11 +427,11 @@ export default function Projects() {
                           decoding="async"
                           data-nimg="1"
                           className="size-full object-cover"
-                          srcSet="
-                              /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x,
-                              /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x
-                            "
-                          src="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75"
+                          //   srcSet="
+                          //       /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x,
+                          //       /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x
+                          //     "
+                          src="/images/bg4.webp"
                           style={{ color: "transparent" }}
                         />
                       </div>

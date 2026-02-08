@@ -13,11 +13,11 @@ export default function HeroSection() {
                 decoding="async"
                 data-nimg="1"
                 className="h-full w-full scale-120 rounded-xl object-cover"
-                srcSet="
-                                /_next/image?url=%2Fimages%2Fnarsi-bhati.webp&amp;w=96&amp;q=75  1x,
-                                /_next/image?url=%2Fimages%2Fnarsi-bhati.webp&amp;w=256&amp;q=75 2x
-                              "
-                src="/_next/image?url=%2Fimages%2Fnarsi-bhati.webp&amp;w=256&amp;q=75"
+                // srcSet="
+                //                 /_next/image?url=%2Fimages%2Fnarsi-bhati.webp&amp;w=96&amp;q=75  1x,
+                //                 /_next/image?url=%2Fimages%2Fnarsi-bhati.webp&amp;w=256&amp;q=75 2x
+                //               "
+                src="./images/MD Razikul Islam Joni, Full-stack Developer.webp"
                 style={{ color: "transparent" }}
               />
             </div>

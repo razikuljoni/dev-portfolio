@@ -138,7 +138,7 @@ export default function FooterSection() {
             >
               razikuljoni
             </a>
-            . The source code is available on
+            . The source code is available on{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
