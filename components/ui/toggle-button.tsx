@@ -6,7 +6,7 @@ export default function Toggle() {
     const [mode, setMode] = useState(false)
 
     useEffect(() => {
-        if (mode) {
+        if (!mode) {
             document.documentElement.classList.add("dark")
         } else {
             document.documentElement.classList.remove("dark")
@@ -15,7 +15,7 @@ export default function Toggle() {
 
     return (
         <label className="switch">
-            <input checked={!mode} id="checkbox" type="checkbox" onChange={() => setMode(!mode)} />
+            <input checked={mode} id="checkbox" type="checkbox" onChange={() => setMode(!mode)} />
             <span className="slider">
                 <div className="star star_1"></div>
                 <div className="star star_2"></div>

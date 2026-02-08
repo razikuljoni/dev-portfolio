@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 
-function FloatingPaths({ position }: { position: number }) {
+export function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 36 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position} -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
@@ -44,14 +44,14 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths({ children }: { children: React.ReactNode }) {
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
+        <div className="relative min-h-screen w-full overflow-hidden bg-white dark:bg-neutral-950">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 <FloatingPaths position={-1} />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="max-w-4xl mx-auto">
+            <div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
                     {children}
                 </motion.div>
             </div>

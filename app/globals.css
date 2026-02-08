@@ -133,9 +133,10 @@
 }
 
 .dark {
-    /* --pattern-fg: #30303033;
+    /* Background Pattern related */
+    --pattern-fg: #30303033;
     --pattern-border: #30303033;
-    --background: #0b0d0e; */
+    --background: #0b0d0e;
 
     /* --background: oklch(0.13 0.028 261.692); */
     --foreground: oklch(0.985 0.002 247.839);
