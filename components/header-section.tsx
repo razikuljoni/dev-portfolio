@@ -14,7 +14,7 @@ export default function Header() {
                         data-nimg="1"
                         className="h-10 w-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 dark:invert"
                         style={{ color: "transparent" }}
-                        src="/images/MD Razikul Islam Joni, Full-stack Developer.webp"
+                        src="/logo.svg"
                     />
                 </a>
                 <div className="flex items-center justify-center gap-3">

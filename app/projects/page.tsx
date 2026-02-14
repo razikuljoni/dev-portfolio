@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Projects() {
     return (
         <div>
@@ -18,7 +20,7 @@ export default function Projects() {
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
                             data-project-id="audora"
                         >
-                            <a
+                            <Link
                                 className="group flex w-full cursor-pointer flex-col gap-3"
                                 href="/projects/audora"
                             >
@@ -59,8 +61,8 @@ export default function Projects() {
                                                     decoding="async"
                                                     data-img="1"
                                                     className="size-full object-cover"
-                                                    srcSet="/images/projects/audora.webp 1x, /images/projects/audora.webp 2x"
-                                                    src="/images/projects/audora.webp"
+                                                    // srcSet="/images/projects/audora.jpg 1x, /images/projects/audora.jpg 2x"
+                                                    src="/images/projects/audora.jpg"
                                                     style={{ color: "transparent" }}
                                                 />
                                             </div>
@@ -118,7 +120,7 @@ export default function Projects() {
                                         </svg>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                         <div
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
@@ -165,8 +167,8 @@ export default function Projects() {
                                                     decoding="async"
                                                     data-nimg="1"
                                                     className="size-full object-cover"
-                                                    srcSet="/_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75 2x"
-                                                    src="/_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75"
+                                                    // srcSet="/_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprojects%2Fcosketch.webp&amp;w=2048&amp;q=75 2x"
+                                                    src="/images/projects/cosketch.jpg"
                                                     style={{ color: "transparent" }}
                                                 />
                                             </div>
@@ -270,8 +272,8 @@ export default function Projects() {
                                                     decoding="async"
                                                     data-nimg="1"
                                                     className="size-full object-cover"
-                                                    srcSet="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x"
-                                                    src="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75"
+                                                    // srcSet="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x"
+                                                    src="/images/coming-soon.jpg"
                                                     style={{ color: "transparent" }}
                                                 />
                                             </div>
@@ -375,8 +377,8 @@ export default function Projects() {
                                                     decoding="async"
                                                     data-nimg="1"
                                                     className="size-full object-cover"
-                                                    srcSet="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x"
-                                                    src="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75"
+                                                    // srcSet="/_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fcoming-soon.webp&amp;w=2048&amp;q=75 2x"
+                                                    src="/images/coming-soon.jpg"
                                                     style={{ color: "transparent" }}
                                                 />
                                             </div>
@@ -480,8 +482,8 @@ export default function Projects() {
                                                     decoding="async"
                                                     data-nimg="1"
                                                     className="size-full object-cover"
-                                                    srcSet="/_next/image?url=%2Fimages%2Fprojects%2Fcreate-next-starter.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprojects%2Fcreate-next-starter.webp&amp;w=2048&amp;q=75 2x"
-                                                    src="/_next/image?url=%2Fimages%2Fprojects%2Fcreate-next-starter.webp&amp;w=2048&amp;q=75"
+                                                    // srcSet="/_next/image?url=%2Fimages%2Fprojects%2Fcreate-next-starter.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprojects%2Fcreate-next-starter.webp&amp;w=2048&amp;q=75 2x"
+                                                    src="/images/projects/create-next-starter.jpg"
                                                     style={{ color: "transparent" }}
                                                 />
                                             </div>

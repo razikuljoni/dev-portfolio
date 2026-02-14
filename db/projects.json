@@ -1,0 +1,24 @@
+{
+    "projects": [
+        {
+            "id": "melody-institute",
+            "name": "Melody Institute",
+            "description": "Melody Institute is a music streaming platform",
+            "image": "/images/projects/melody-institute.jpg",
+            "link": "/projects/melody-institute",
+            "live": "https://melody-institute.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/melody-institute",
+            "tags": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "PostgreSQL",
+                "Prisma",
+                "Shadcn UI",
+                "Clerk",
+                "Stripe",
+                "Vercel"
+            ]
+        }
+    ]
+}
