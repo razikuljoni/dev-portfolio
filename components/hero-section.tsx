@@ -2,7 +2,7 @@ export default function HeroSection() {
     return (
         // HERO Section
         <section className="container mx-auto flex max-w-(--content-max-width) flex-col items-start justify-center px-4 pt-10 pb-4 sm:pt-12 sm:pb-6">
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 py-8">
                 <div className="flex flex-row gap-4 sm:items-start sm:gap-6 transition-all duration-600 ease-out translate-y-0 opacity-100">
                     <div className="h-24 w-24 shrink-0 rounded-2xl bg-muted p-1.5 ring-1 ring-border ring-inset sm:h-28 sm:w-28">
                         <div className="h-full w-full overflow-hidden rounded-xl">
