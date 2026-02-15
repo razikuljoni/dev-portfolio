@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export default function Toggle() {
-    const [mode, setMode] = useState(false)
+    const [mode, setMode] = useState(false);
 
     useEffect(() => {
         if (!mode) {
-            document.documentElement.classList.add("dark")
+            document.documentElement.classList.add("dark");
         } else {
-            document.documentElement.classList.remove("dark")
+            document.documentElement.classList.remove("dark");
         }
-    }, [mode])
+    }, [mode]);
 
     return (
         <label className="switch">
@@ -29,5 +29,5 @@ export default function Toggle() {
                 </svg>
             </span>
         </label>
-    )
+    );
 }

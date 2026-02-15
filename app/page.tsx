@@ -1,5 +1,3 @@
-"use client";
-
 import FooterSection from "@/components/footer-section";
 import HeroSection from "@/components/hero-section";
 
@@ -13,8 +11,8 @@ import Projects from "../components/projects-section";
 export default function Page() {
     return (
         <main className="mt-10">
-            <Header />
             <div className="flex flex-col">
+                <Header />
                 <BackgroundPaths>
                     <HeroSection />
                 </BackgroundPaths>
