@@ -137,6 +137,7 @@
     --pattern-fg: #30303033;
     --pattern-border: #30303033;
     --background: #0b0d0e;
+    --content-max-width: 60rem;
 
     /* --background: oklch(0.13 0.028 261.692); */
     --foreground: oklch(0.985 0.002 247.839);
@@ -287,4 +288,16 @@
 
 .switch input:checked ~ .slider .cloud {
     opacity: 1;
+}
+
+@media (min-width: 48rem) {
+    .md\:w-full {
+        width: 100%;
+    }
+}
+
+@media (min-width: 48rem) {
+    .md\:max-w-\(--content-max-width\) {
+        max-width: var(--content-max-width);
+    }
 }

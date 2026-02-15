@@ -1,3 +1,4 @@
+import Header from "@/components/header-section";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,7 +33,10 @@ export default function RootLayout({
                     <div className="pointer-events-none relative -left-px col-start-3 row-span-full row-start-1 hidden border-x-[1.5px] border-x-(--pattern-border) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1.5px,transparent_0,transparent_50%)] bg-[length:6px_6px] bg-fixed md:block"></div>
                     <div className="pointer-events-none relative -bottom-px col-span-full col-start-1 row-start-1 hidden h-[1.5px] bg-(--pattern-border) md:block"></div>
 
-                    {children}
+                    <div className="col-start-2 row-start-2">
+                        <Header />
+                        {children}
+                    </div>
                 </div>
             </body>
         </html>

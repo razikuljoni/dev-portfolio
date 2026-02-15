@@ -3,22 +3,60 @@
         {
             "id": "melody-institute",
             "name": "Melody Institute",
-            "description": "Melody Institute is a music streaming platform",
-            "image": "/images/projects/melody-institute.jpg",
+            "description": [
+                "There are a total of four pages. On the Homepage, you can see a hero section, popular courses section, popular instructors section, and reviews section. Users can select and enroll in any course.",
+                "Admin can make someone an instructor and approve and reject instructor courses with feedback.",
+                "Instructors add classes, see classes, see approved classes, and see rejected classes with feedback."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/melodyinstitute.png",
             "link": "/projects/melody-institute",
-            "live": "https://melody-institute.razikuljoni.dev",
+            "liveSite": "https://melodyinstitute.razikuljoni.dev",
             "github": "https://github.com/razikuljoni/melody-institute",
-            "tags": [
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "PostgreSQL",
-                "Prisma",
-                "Shadcn UI",
-                "Clerk",
+            "tag": "Featured",
+            "techStack": [
+                "React Js",
+                "Node Js",
+                "Express Js",
+                "TanStack Query",
                 "Stripe",
-                "Vercel"
+                "Firebase",
+                "Mongo DB",
+                "TailwindCss"
             ]
+        },
+        {
+            "id": "books-finder",
+            "name": "Books Finder",
+            "description": [
+                "MERN stack project. Different role users can do many different things. Such as add to cart, enroll and payment, add class, update class, delete class, admin can approve and reject class with feedback. User can see all classes and all instructors. Available seats, enrolled students, price, rating, lessons etc. Logged In user can add a toy with necessary information, update a toy and delete the toy."
+            ],
+            "status": "Building",
+            "thumb": "/images/projects/bookfinders.png",
+            "link": "/projects/books-finder",
+            "liveSite": "https://books-finder.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/books-finder",
+            "tag": "Featured",
+            "techStack": [
+                "React Js",
+                "Redux-Toolkit",
+                "Rtk-Query",
+                "Node Js",
+                "Express Js",
+                "Mongo DB",
+                "TailwindCss"
+            ]
+        },
+        {
+            "id": "coming-soon",
+            "name": "Coming Soon",
+            "description": ["Coming soon project"],
+            "thumb": "/images/projects/coming-soon.jpg",
+            "link": "/projects/coming-soon",
+            "liveSite": "https://coming-soon.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/coming-soon",
+            "tag": "Featured",
+            "techStack": ["React Js", "Node Js", "Express Js", "Mongo DB", "TailwindCss"]
         }
     ]
 }

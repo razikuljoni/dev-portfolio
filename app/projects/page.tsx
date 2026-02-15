@@ -1,4 +1,6 @@
-import Link from "next/link";
+import ProjectCard from "@/components/project-card";
+import { projects } from "@/db/projects.json";
+import { Project } from "@/types/project";
 
 export default function Projects() {
     return (
@@ -16,7 +18,10 @@ export default function Projects() {
                 </div>
                 <div className="container mx-auto mt-8 max-w-(--content-max-width) px-4">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                        <div
+                        {projects?.map((project: Project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                        {/* <div
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
                             data-project-id="audora"
                         >
@@ -121,12 +126,12 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </Link>
-                        </div>
-                        <div
+                        </div> */}
+                        {/* <div
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
                             data-project-id="cosketch"
                         >
-                            <a
+                            <Link
                                 className="group flex w-full cursor-pointer flex-col gap-3"
                                 href="/projects/cosketch"
                             >
@@ -225,13 +230,13 @@ export default function Projects() {
                                         </svg>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                         <div
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
                             data-project-id="rit"
                         >
-                            <a
+                            <Link
                                 className="group flex w-full cursor-pointer flex-col gap-3"
                                 href="/projects/rit"
                             >
@@ -330,7 +335,7 @@ export default function Projects() {
                                         </svg>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                         <div
                             className="relative z-10 rounded-lg border border-border/50 p-3 transition-all hover:border-border sm:p-4"
@@ -1066,7 +1071,7 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
