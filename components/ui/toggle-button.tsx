@@ -10,6 +10,7 @@ export default function Toggle() {
             document.documentElement.classList.add("dark");
         } else {
             document.documentElement.classList.remove("dark");
+            document.documentElement.classList.add("light");
         }
     }, [mode]);
 

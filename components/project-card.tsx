@@ -18,27 +18,18 @@ export default function ProjectCard({ project }: { project: (typeof projects)[0]
                     <div className="rounded-[10px] border border-border p-[4px]">
                         <div className="relative h-[220px] w-full overflow-hidden rounded-[6px] border border-border bg-muted select-none sm:h-[240px] md:h-[260px]">
                             <div
-                                className="absolute inset-0 bg-cover bg-center"
+                                className="absolute inset-0 bg-cover bg-center opacity-0 transition-all duration-500 group-hover:opacity-100"
                                 style={{
                                     // eslint-disable-next-line react-hooks/purity
                                     backgroundImage: `url('/images/bg${Math.floor(Math.random() * 4) + 1}.webp')`,
-
-                                    opacity: 1,
                                     filter: "blur(0.5px)",
                                 }}
                             ></div>
                             <div
-                                className="absolute inset-0 bg-black/40"
+                                className="absolute inset-0 bg-black/40 transition-all duration-300 group-hover:opacity-100"
                                 style={{ opacity: 0 }}
                             ></div>
-                            <h1
-                                className="absolute top-2 left-2 text-xs font-bold text-muted-foreground drop-shadow-md"
-                                style={{
-                                    left: "0.5rem",
-                                    color: "hsl(var(--muted-foreground))",
-                                    transform: "none",
-                                }}
-                            >
+                            <h1 className="absolute top-2 left-2 text-xs font-bold text-muted-foreground drop-shadow-md transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:text-foreground group-hover:animate-bounce group-hover:duration-500">
                                 {project.tag}
                             </h1>
                             <div

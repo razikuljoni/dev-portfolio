@@ -1,10 +1,13 @@
-import Toggle from "./ui/toggle-button"
+import Toggle from "./ui/toggle-button";
 
 export default function Header() {
     return (
-        <header className="fixed top-0 right-0 left-0 z-50 transition-all duration-700 ease-out md:top-2 md:left-1/2 md:w-full md:max-w-(--content-max-width) md:-translate-x-1/2 md:px-3 translate-y-0 opacity-100">
+        <header className="fixed top-0 right-0 left-0 z-50 transition-all duration-700 ease-out md:top-2 md:left-1/2 md:max-w-(--content-max-width) md:-translate-x-1/2 md:px-3 translate-y-0 opacity-100">
             <div className="flex items-center justify-between border-b border-neutral-200 bg-background/90 px-4 py-2.5 backdrop-blur-md md:overflow-hidden md:rounded-2xl md:border md:border-border/50 md:shadow-lg md:shadow-black/5 dark:border-neutral-700 dark:md:shadow-black/20">
-                <a className="group border-0 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline" href="#">
+                <a
+                    className="group border-0 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline"
+                    href="#"
+                >
                     <img
                         alt="MD Razikul Islam Joni Logo"
                         loading="lazy"
@@ -19,13 +22,22 @@ export default function Header() {
                 </a>
                 <div className="flex items-center justify-center gap-3">
                     <div className="hidden md:flex md:items-center md:gap-3">
-                        <a className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" href="#experience">
+                        <a
+                            className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                            href="#experience"
+                        >
                             Experience
                         </a>
-                        <a className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" href="#projects">
+                        <a
+                            className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                            href="#projects"
+                        >
                             Projects
                         </a>
-                        <a className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" href="#blogs">
+                        <a
+                            className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                            href="#blogs"
+                        >
                             Blogs
                         </a>
                     </div>
@@ -36,11 +48,22 @@ export default function Header() {
                             <span className="text-xs">⌘</span>K
                         </kbd>
                     </button>
-                    <div data-slot="dialog-header" className="flex flex-col gap-2 text-center sm:text-left sr-only">
-                        <h2 id="radix-_R_4kpa6btbH1_" data-slot="dialog-title" className="text-lg leading-none font-semibold">
+                    <div
+                        data-slot="dialog-header"
+                        className="flex flex-col gap-2 text-center sm:text-left sr-only"
+                    >
+                        <h2
+                            id="radix-_R_4kpa6btbH1_"
+                            data-slot="dialog-title"
+                            className="text-lg leading-none font-semibold"
+                        >
                             Command Palette
                         </h2>
-                        <p id="radix-_R_4kpa6btbH2_" data-slot="dialog-description" className="text-sm text-muted-foreground">
+                        <p
+                            id="radix-_R_4kpa6btbH2_"
+                            data-slot="dialog-description"
+                            className="text-sm text-muted-foreground"
+                        >
                             Search for a command to run...
                         </p>
                     </div>
@@ -50,5 +73,5 @@ export default function Header() {
                 </div>
             </div>
         </header>
-    )
+    );
 }
