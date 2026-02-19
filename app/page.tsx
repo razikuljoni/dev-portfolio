@@ -16,7 +16,7 @@ export default function Page() {
                 </BackgroundPaths>
                 <Experience />
                 <Projects />
-                <Blogs />
+                {/* <Blogs /> */}
                 <GithubSection />
                 <FooterSection />
             </div>
