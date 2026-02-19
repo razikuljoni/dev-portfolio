@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: { project: (typeof projects)[0]
                                         height="1000"
                                         decoding="async"
                                         data-nimg="1"
-                                        className="size-full object-cover"
+                                        className="size-full hover:scale-120 object-contain transition-all duration-400"
                                         src={project.thumb}
                                         style={{ color: "transparent" }}
                                     />

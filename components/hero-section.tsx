@@ -1,3 +1,5 @@
+import { GrDocumentPerformance } from "react-icons/gr";
+
 export default function HeroSection() {
     return (
         // HERO Section
@@ -24,7 +26,9 @@ export default function HeroSection() {
                     </div>
                     <div className="flex min-h-24 flex-col justify-end sm:min-h-28">
                         <div className="flex items-center gap-2">
-                            <h1 className="text-4xl font-bold tracking-tight">MD Razikul Islam Joni</h1>
+                            <h1 className="text-4xl font-bold tracking-tight">
+                                MD Razikul Islam Joni
+                            </h1>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -39,7 +43,11 @@ export default function HeroSection() {
                                 ></path>
                             </svg>
                         </div>
-                        <div className="relative h-8 overflow-hidden sm:h-10" aria-live="polite" aria-atomic="true">
+                        <div
+                            className="relative h-8 overflow-hidden sm:h-10"
+                            aria-live="polite"
+                            aria-atomic="true"
+                        >
                             <h2
                                 className="absolute inset-0 flex items-center font-medium text-muted-foreground text-lg sm:text-xl"
                                 // style={{
@@ -64,8 +72,9 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <p className="max-w-[650px] text-lg text-muted-foreground transition-all duration-600 ease-out delay-150 translate-y-0 opacity-100">
-                    Crafting seamless digital experiences with a passion for intuitive UI, lightning-fast performance, and pixel-perfect code. Turning ideas into interactive, user-first web
-                    applications.
+                    Crafting seamless digital experiences with a passion for intuitive UI,
+                    lightning-fast performance, and pixel-perfect code. Turning ideas into
+                    interactive, user-first web applications.
                 </p>
                 <div className="flex flex-wrap items-center gap-2 transition-all duration-600 ease-out delay-200 translate-y-0 opacity-100">
                     <div className="flex flex-wrap items-center gap-2">
@@ -73,38 +82,18 @@ export default function HeroSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground"
-                            aria-label="Book an intro call"
-                            href="https://cal.com/narsi"
+                            aria-label="Show Resume"
+                            href="https://drive.google.com/file/d/1E5FovesI96cUkiXMnEgkI0B8_dcYvmoK/view?usp=sharing"
                         >
                             <div className="relative h-5 w-5 overflow-hidden">
-                                <div className="flex h-full w-full items-center justify-center" style={{ transform: "none" }}>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="lucide lucide-calendar-days h-5 w-5 shrink-0"
-                                        aria-hidden="true"
-                                    >
-                                        <path d="M8 2v4"></path>
-                                        <path d="M16 2v4"></path>
-                                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                                        <path d="M3 10h18"></path>
-                                        <path d="M8 14h.01"></path>
-                                        <path d="M12 14h.01"></path>
-                                        <path d="M16 14h.01"></path>
-                                        <path d="M8 18h.01"></path>
-                                        <path d="M12 18h.01"></path>
-                                        <path d="M16 18h.01"></path>
-                                    </svg>
+                                <div
+                                    className="flex h-full w-full items-center justify-center"
+                                    style={{ transform: "none" }}
+                                >
+                                    <GrDocumentPerformance className="h-4 w-4 shrink-0" />
                                 </div>
                             </div>
-                            <span>Book an intro call</span>
+                            <span>Show Resume</span>
                         </a>
                         <a
                             className="inline-flex items-center justify-center gap-2 rounded-md bg-muted/60 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
@@ -112,7 +101,10 @@ export default function HeroSection() {
                             href="mailto:contact.razikuljoni@gmail.com"
                         >
                             <div className="relative h-5 w-5 overflow-hidden">
-                                <div className="flex h-full w-full items-center justify-center" style={{ transform: "none" }}>
+                                <div
+                                    className="flex h-full w-full items-center justify-center"
+                                    style={{ transform: "none" }}
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -136,8 +128,13 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-3 transition-all duration-600 ease-out delay-300 translate-y-0 opacity-100">
-                    <p className="text-sm font-medium text-muted-foreground">Here are my socials and resume</p>
-                    <nav aria-label="Social links" className="inline-flex flex-wrap items-center gap-2">
+                    <p className="text-sm font-medium text-muted-foreground">
+                        Here are my socials and resume
+                    </p>
+                    <nav
+                        aria-label="Social links"
+                        className="inline-flex flex-wrap items-center gap-2"
+                    >
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
@@ -145,7 +142,14 @@ export default function HeroSection() {
                             aria-label="GitHub"
                             href="https://github.com/razikuljoni"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 shrink-0" role="img" aria-label="GitHub">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-4 w-4 shrink-0"
+                                role="img"
+                                aria-label="GitHub"
+                            >
                                 <path
                                     fillRule="evenodd"
                                     clipRule="evenodd"
@@ -161,7 +165,14 @@ export default function HeroSection() {
                             aria-label="LinkedIn"
                             href="https://www.linkedin.com/in/razikuljoni"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 shrink-0" role="img" aria-label="LinkedIn">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-4 w-4 shrink-0"
+                                role="img"
+                                aria-label="LinkedIn"
+                            >
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                             </svg>
                             <span>LinkedIn</span>
@@ -173,7 +184,14 @@ export default function HeroSection() {
                             aria-label="Twitter"
                             href="https://x.com/razikuljoni"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 shrink-0" role="img" aria-label="X (Twitter)">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-4 w-4 shrink-0"
+                                role="img"
+                                aria-label="X (Twitter)"
+                            >
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                             </svg>
                             <span>Twitter</span>
@@ -185,7 +203,14 @@ export default function HeroSection() {
                             aria-label="View or download resume"
                             href="/narsi_resume.pdf"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 shrink-0" role="img" aria-label="Resume">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-4 w-4 shrink-0"
+                                role="img"
+                                aria-label="Resume"
+                            >
                                 <path
                                     fillRule="evenodd"
                                     d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
@@ -226,9 +251,14 @@ export default function HeroSection() {
                     </nav>
                 </div>
                 <div className="flex flex-col gap-2 transition-all duration-600 ease-out delay-300 translate-y-0 opacity-100">
-                    <h3 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">Tech Stack</h3>
+                    <h3 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
+                        Tech Stack
+                    </h3>
                     <div className="flex flex-wrap gap-2">
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "400ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "400ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -255,7 +285,10 @@ export default function HeroSection() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "440ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "440ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -282,7 +315,10 @@ export default function HeroSection() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "480ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "480ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -309,7 +345,10 @@ export default function HeroSection() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "520ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "520ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -336,7 +375,10 @@ export default function HeroSection() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "560ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "560ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -423,7 +465,10 @@ export default function HeroSection() {
                 </svg>
               </a>
             </div> */}
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "680ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "680ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -450,7 +495,10 @@ export default function HeroSection() {
                                 </svg>
                             </a>
                         </div>
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "720ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "720ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -507,7 +555,10 @@ export default function HeroSection() {
                 </svg>
               </a>
             </div> */}
-                        <div className="transition-all duration-500 ease-out translate-y-0 opacity-100" style={{ transitionDelay: "800ms" }}>
+                        <div
+                            className="transition-all duration-500 ease-out translate-y-0 opacity-100"
+                            style={{ transitionDelay: "800ms" }}
+                        >
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -568,5 +619,5 @@ export default function HeroSection() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
