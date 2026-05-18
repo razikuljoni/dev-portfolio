@@ -1,0 +1,12 @@
+## [2026-05-13] Learnings & Convention Notes
+- shadcn/ui with Tailwind CSS v4 + `tw-animate-css`
+- CSS variables in `:root` and `.dark` for theming
+- Framer Motion v12 for animations
+- Next.js 16 App Router
+- Data files: `db/projects.json` (JSON), `db/blogs.ts` (TypeScript array)
+- Image paths: `/images/...`
+- Layout: CSS Grid with 3 columns (1fr | 60rem | 1fr) + decorative pattern sidebars
+- Icons: lucide-react, react-icons, or inline SVGs
+- Fonts: Geist (sans), JetBrains Mono (sans variable)
+- Theme: localStorage "theme" key, class `dark` on html, prefers-color-scheme listener
+- Framer Motion v12 strict types: `ease` property must use `as const` (e.g., `ease: "easeOut" as const`) to avoid type errors with Variants

@@ -1,0 +1,16 @@
+{
+    "name": "MD Razikul Islam Joni",
+    "short_name": "Razikul",
+    "description": "Software developer portfolio showcasing projects, experience, and writing.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0b0d0e",
+    "theme_color": "#0b0d0e",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        }
+    ]
+}
