@@ -10,16 +10,18 @@ Next.js 16 portfolio site for Razikul Islam Joni. Full-stack with App Router, Fr
 ## STRUCTURE
 ```
 dev-portfolio/
-├── app/           # Routes, layouts, SEO (19 files)
+├── app/           # Routes, layouts, SEO (20 files)
+│   ├── about/resume/  # Resume PDF-printable route
 │   ├── blogs/     # Blog listing + [slug] detail
 │   ├── projects/  # Project listing + [name] detail
 │   └── (seo)/     # opengraph + twitter images
-├── components/    # React components (37 files)
-│   ├── ui/        # shadcn-style primitives (20 files)
+├── components/    # React components (23 files)
+│   ├── ui/        # shadcn-style primitives (9 files)
 │   └── *.tsx      # Feature sections (hero, blog, project cards)
 ├── db/            # Data layer (blogs.ts, projects.json)
 ├── lib/           # Utilities (site config, cn() helper)
 ├── types/         # TypeScript types (project.ts)
+├── goals/         # Goal packages for tracked features
 └── public/        # Static assets (images, screenshots)
 ```
 
@@ -27,6 +29,7 @@ dev-portfolio/
 | Task | Location |
 |------|----------|
 | Add/edit page | `app/` |
+| Add/edit resume content | `app/about/resume/` (page.tsx + resume-content.tsx) |
 | Add/edit component | `components/` or `components/ui/` |
 | Update portfolio data | `db/` (blogs.ts, projects.json) |
 | Update site config | `lib/site.ts` |
@@ -56,8 +59,10 @@ pnpm lint     # ESLint check
 
 ## NOTES
 - Graphify knowledge graph at `graphify-out/` — run `/graphify` to query
-- 280 nodes, 403 edges across 52 communities (see GRAPH_REPORT.md)
-- God nodes: cn() (97 edges), Button() (9), siteConfig (8)
+- 533 nodes, 997 edges across 75 communities (see GRAPH_REPORT.md)
+- God nodes: cn() (131 edges), Button() (18), siteConfig (16)
+- Resume at `/about/resume` uses `window.print()` with `beforeprint`/`afterprint` JS events
+- Print mode hides `<header>` via JS + resets `.resume-page-wrapper` padding
 
 ---
 
@@ -72,6 +77,8 @@ Rules:
 - IF graphify-out/wiki/index.md EXISTS, navigate it instead of reading raw files
 - For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+---
 
 <skills_system priority="1">
 

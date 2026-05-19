@@ -200,7 +200,7 @@
     }
 
     .container {
-        @apply max-w-[1200px] mx-auto;
+        @apply max-w-300 mx-auto;
     }
 }
 
@@ -343,5 +343,31 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+.resume-page-wrapper {
+    @apply py-20;
+}
+
+@media print {
+    header {
+        display: none !important;
+    }
+    .resume-page-wrapper {
+        @apply py-0;
+    }
+    .no-print {
+        display: none !important;
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    @page {
+        margin: 14mm 16mm;
+    }
+    section {
+        page-break-inside: avoid;
     }
 }

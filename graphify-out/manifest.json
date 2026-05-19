@@ -4,7 +4,7 @@
     "hash": "239f3ebf717465dc636818a1a619398d"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/next-env.d.ts": {
-    "mtime": 1778693574.5676277,
+    "mtime": 1779177694.7085524,
     "hash": "d0f8375ae1199dc7acd3977fc33b78b8"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/eslint.config.mjs": {
@@ -28,8 +28,8 @@
     "hash": "bf60dbf66653e9c65df26f2be0b510ec"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/app/layout.tsx": {
-    "mtime": 1779134899.9619443,
-    "hash": "44bd3cda616faf788ad01a3654baf9a5"
+    "mtime": 1779184741.2317617,
+    "hash": "72504e3cfa98a5d85e62db7366a7d490"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/app/loading.tsx": {
     "mtime": 1779093194.0396676,
@@ -87,9 +87,17 @@
     "mtime": 1779130015.500352,
     "hash": "68e4aea1e43deef982da227f8da8237e"
   },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/app/about/resume/resume-content.tsx": {
+    "mtime": 1779187288.3882477,
+    "hash": "83fa7cbd090109ae5fe053d662149d97"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/app/about/resume/page.tsx": {
+    "mtime": 1779187121.9599113,
+    "hash": "e33c4bdf226e4435061d7832f82aad9f"
+  },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/theme-provider.tsx": {
-    "mtime": 1779134883.4469974,
-    "hash": "b273e72bab1a2410089b3d70c051eb3a"
+    "mtime": 1779139727.5382783,
+    "hash": "ea766c0c354b238ce8b3722400f8128c"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/ai-discovery-section.tsx": {
     "mtime": 1779095616.4526792,
@@ -100,12 +108,12 @@
     "hash": "6fdd6af331d30d11bf68c4c075123f3d"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/projects-section.tsx": {
-    "mtime": 1779134990.8675823,
-    "hash": "5279aee6ed877fa1ee498a531a4cfbfd"
+    "mtime": 1779179955.3634377,
+    "hash": "28acf7d127697a94e4d11702af8d0522"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/blogs-section.tsx": {
-    "mtime": 1779134985.4007318,
-    "hash": "5641d8649978f5c071ee237f95bc2d74"
+    "mtime": 1779179992.5707865,
+    "hash": "4146c50cc20af9f18f76c9caf6632ea4"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/component-example.tsx": {
     "mtime": 1779135051.084531,
@@ -128,20 +136,20 @@
     "hash": "f42e76245d16e4dc8aba294c2f7abe1b"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/hero-section.tsx": {
-    "mtime": 1779120394.70141,
-    "hash": "337e6ff0a91772eb23d2dc3d4fcaf6e4"
+    "mtime": 1779177642.7851443,
+    "hash": "e9599b47c59a5fc433e6904f433e050f"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/github-section.tsx": {
     "mtime": 1779128338.5735712,
     "hash": "33ffb148a4eb94eac707e8fc8071c9b3"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/footer-section.tsx": {
-    "mtime": 1779129001.1119742,
-    "hash": "4f9c28b9895b2845b801120fad486092"
+    "mtime": 1779177645.384826,
+    "hash": "f6b8328eb0b3621a4fe46f8297f2bc0c"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/contact-form.tsx": {
-    "mtime": 1779118047.525736,
-    "hash": "64656975d0e37f997ba512b6de95607c"
+    "mtime": 1779139964.978906,
+    "hash": "b2a955ca6a2c60a772f4328d86127917"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/experience-section.tsx": {
     "mtime": 1779090898.782426,
@@ -200,8 +208,8 @@
     "hash": "9e061efa963ee9da198ed2b57e016806"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/ui/dock.tsx": {
-    "mtime": 1779135037.2548006,
-    "hash": "3cd33278f7cb1d89c0f97d9120d42fa1"
+    "mtime": 1779140000.2734618,
+    "hash": "daccc6f282d4e19131edf9ef4a9b6f22"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/ui/avatar.tsx": {
     "mtime": 1779095323.9168658,
@@ -212,8 +220,8 @@
     "hash": "0da2a736e0a85790eaf3d1c234efde12"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/ui/toggle-button.tsx": {
-    "mtime": 1779134905.6321115,
-    "hash": "8884b24819c4d8bb4cbb25cd9e82c369"
+    "mtime": 1779140174.6486862,
+    "hash": "669cd2d225feee0b1bf80268b11584d9"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/components/ui/separator.tsx": {
     "mtime": 1779095324.8718996,
@@ -264,12 +272,24 @@
     "hash": "4cd676f7d3dd452b3cee54f29a257678"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/AGENTS.md": {
-    "mtime": 1778957639.2025206,
-    "hash": "b6c13ea933383b411ae8637b5aeec16f"
+    "mtime": 1779187591.5672293,
+    "hash": "95173df2c33fc47c96e943be34443584"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/pnpm-workspace.yaml": {
     "mtime": 1778682930.062311,
     "hash": "bb50e932d44a2dde6b7fe1bbea2c98c5"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/goals/resume-integration/goal.md": {
+    "mtime": 1779187625.0805197,
+    "hash": "ab5401d9a5de6aed932db075a57d9337"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/goals/resume-integration/facts.md": {
+    "mtime": 1779187607.6576974,
+    "hash": "68f12d49baf248c9b36716ffe5e19f15"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/goals/resume-integration/plan.md": {
+    "mtime": 1779187620.3596845,
+    "hash": "c77ed69ca7d3886cf1004f5553c57eab"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/docs/content-authoring.md": {
     "mtime": 1779036208.4353042,
@@ -307,6 +327,18 @@
     "mtime": 1779034701.8680925,
     "hash": "ee5cc33e137c62e87893d0d6d9d88d55"
   },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/openspec/changes/theme-toggle-hydration-fix/tasks.md": {
+    "mtime": 1779136967.1021981,
+    "hash": "6e601133bcffd111c93642206798a330"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/openspec/changes/theme-toggle-hydration-fix/design.md": {
+    "mtime": 1779136961.8470402,
+    "hash": "cf11e898d25e613e805ba14ef4448467"
+  },
+  "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/openspec/changes/theme-toggle-hydration-fix/proposal.md": {
+    "mtime": 1779136953.2957776,
+    "hash": "41942f74023ad74d0c2eee0bc61261a2"
+  },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/openspec/changes/resume-driven-profile-refresh-and-blog-route-fix/tasks.md": {
     "mtime": 1779038700.9457836,
     "hash": "4826faf2f4546a179085299f6d798586"
@@ -332,8 +364,8 @@
     "hash": "f1ded1a2003562ce80e86dc51a5fc70b"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/app/AGENTS.md": {
-    "mtime": 1778957589.3570397,
-    "hash": "86716d7dfd054955adc0a8f82ff25ae6"
+    "mtime": 1779187601.7297277,
+    "hash": "ef98cb8b67045d8cdaf87fd3398b16f7"
   },
   "/Users/razikuljoni/WorkSpace/Personal Work Space/dev-portfolio/src/content/blogs/portfolio-information-architecture.mdx": {
     "mtime": 1779036202.6789358,

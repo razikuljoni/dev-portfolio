@@ -68,7 +68,7 @@ export default function Blogs() {
                     <div className="flex justify-center pt-2">
                         <div style={{ opacity: 1, transform: "none" }}>
                             <Link
-                                className="group inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background ring-2 ring-foreground/10 ring-offset-2 ring-offset-background transition-all hover:bg-foreground/90 active:scale-95"
+                                className="group inline-flex items-center gap-2 bg-foreground px-4 py-2 text-sm font-medium text-background ring-2 ring-foreground/10 ring-offset-2 ring-offset-background transition-all hover:bg-foreground/90 active:scale-95"
                                 href="/blogs"
                             >
                                 <span>View All Blogs</span>

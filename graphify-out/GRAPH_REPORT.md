@@ -1,16 +1,16 @@
 # Graph Report - dev-portfolio  (2026-05-19)
 
 ## Corpus Check
-- 85 files · ~120,809 words
+- 93 files · ~123,846 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 533 nodes · 997 edges · 75 communities (43 shown, 32 thin omitted)
+- 582 nodes · 1041 edges · 81 communities (46 shown, 35 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `636e8fef`
+- Built from commit: `6002f64f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -79,22 +79,26 @@
 - [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
+- [[_COMMUNITY_Community 75|Community 75]]
+- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 77|Community 77]]
+- [[_COMMUNITY_Community 78|Community 78]]
+- [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 131 edges
-2. `Button()` - 18 edges
+2. `Button()` - 19 edges
 3. `siteConfig` - 16 edges
 4. `blogs` - 16 edges
 5. `PROJECT KNOWLEDGE BASE` - 10 edges
-6. `Design: theme-system-overhaul` - 8 edges
-7. `Project` - 7 edges
-8. `Empty()` - 7 edges
-9. `EmptyHeader()` - 7 edges
-10. `EmptyTitle()` - 7 edges
+6. `Step Details` - 8 edges
+7. `Design: theme-system-overhaul` - 8 edges
+8. `Project` - 7 edges
+9. `Empty()` - 7 edges
+10. `EmptyHeader()` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ProjectCard()` --calls--> `cn()`  [EXTRACTED]
-  src/components/project-card.tsx → src/lib/utils.ts
 - `ContactFormFields()` --calls--> `cn()`  [EXTRACTED]
   src/components/contact-form.tsx → src/lib/utils.ts
 - `ContactFormContent()` --calls--> `cn()`  [EXTRACTED]
@@ -103,17 +107,19 @@
   src/components/ui/alert-dialog.tsx → src/lib/utils.ts
 - `AlertDialogContent()` --calls--> `cn()`  [EXTRACTED]
   src/components/ui/alert-dialog.tsx → src/lib/utils.ts
+- `AlertDialogHeader()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/alert-dialog.tsx → src/lib/utils.ts
 
 ## Hyperedges (group relationships)
 - **Portfolio Site Components** — md_razikul_islam_joni, razikuljoni_dev, contact_email, razikuljoni_x [EXTRACTED 1.00]
 - **Next.js Core Tooling** — nextjs, createnextapp, nextfont, app_pagetsx [INFERRED 0.85]
 - **Portfolio Background Images Set** — public_images_bg1, public_images_bg2, public_images_bg3, public_images_bg4 [INFERRED 0.80]
 
-## Communities (75 total, 32 thin omitted)
+## Communities (81 total, 35 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (54): cn(), Badge(), badgeVariants, Button(), buttonVariants, Card(), CardAction(), CardContent() (+46 more)
+Cohesion: 0.07
+Nodes (64): ProjectCard(), cn(), Badge(), badgeVariants, Button(), buttonVariants, Card(), CardAction() (+56 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
@@ -132,8 +138,8 @@ Cohesion: 0.14
 Nodes (13): geistMono, geistSans, jetbrainsMono, metadata, RootLayout(), Header(), navLinks, Theme (+5 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.11
-Nodes (10): metadata, Page(), AboutSection(), BackgroundPaths(), FloatingPaths(), Experience(), FooterSection(), GithubSection() (+2 more)
+Cohesion: 0.13
+Nodes (9): metadata, Page(), AboutSection(), BackgroundPaths(), FloatingPaths(), Experience(), FooterSection(), GithubSection() (+1 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.15
@@ -220,8 +226,8 @@ Cohesion: 0.14
 Nodes (13): Acceptance Notes, Architecture, code:block1 (1) stored user preference (localStorage)), code:block2 (Toggle → create overlay with target theme colors), Design System + Contrast Audit, Design: theme-system-overhaul, Early theme application (no flash), Overview (+5 more)
 
 ### Community 65 - "Community 65"
-Cohesion: 0.33
-Nodes (9): SelectContent(), SelectGroup(), SelectItem(), SelectLabel(), SelectScrollDownButton(), SelectScrollUpButton(), SelectSeparator(), SelectTrigger() (+1 more)
+Cohesion: 0.15
+Nodes (12): Approach, Files Touched, Resume Integration — Implementation Plan, Risks, Step 1: Page route (`src/app/about/resume/page.tsx`), Step 2: Resume component (`src/app/about/resume/resume-content.tsx`), Step 3: Hero section edit, Step 4: Footer section edit (+4 more)
 
 ### Community 66 - "Community 66"
 Cohesion: 0.39
@@ -239,24 +245,36 @@ Nodes (6): Avatar(), AvatarFallback(), AvatarFallbackProps, AvatarImage(), Avata
 Cohesion: 0.29
 Nodes (6): Change Proposal: theme-system-overhaul, Non-goals, Scope, Success Criteria, What, Why
 
+### Community 75 - "Community 75"
+Cohesion: 0.18
+Nodes (10): 1) Single source of truth: `data-theme` on `<html>`, 2) Toggle hydration strategy, 3) Transition gating, Acceptance Notes, Architecture, code:block1 (Initial load:), Design: theme-toggle-hydration-fix, Interaction Flow (Desired) (+2 more)
+
+### Community 76 - "Community 76"
+Cohesion: 0.18
+Nodes (5): metadata, education, experience, projects, skillCategories
+
+### Community 77 - "Community 77"
+Cohesion: 0.29
+Nodes (6): Change Proposal: theme-toggle-hydration-fix, Non-goals, Scope, Success Criteria, What, Why
+
 ## Knowledge Gaps
-- **119 isolated node(s):** `config`, `eslintConfig`, `nextConfig`, `Theme`, `ThemeContextValue` (+114 more)
+- **149 isolated node(s):** `config`, `eslintConfig`, `nextConfig`, `skillCategories`, `experience` (+144 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **32 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **35 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 0` to `Community 65`, `Community 2`, `Community 67`, `Community 68`, `Community 5`, `Community 7`, `Community 8`, `Community 10`, `Community 57`?**
-  _High betweenness centrality (0.243) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 0` to `Community 2`, `Community 67`, `Community 68`, `Community 7`, `Community 8`, `Community 10`, `Community 57`?**
+  _High betweenness centrality (0.211) - this node is a cross-community bridge._
 - **Why does `blogs` connect `Community 1` to `Community 3`?**
-  _High betweenness centrality (0.075) - this node is a cross-community bridge._
-- **Why does `siteConfig` connect `Community 1` to `Community 4`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 0` to `Community 2`, `Community 66`, `Community 7`, `Community 8`, `Community 76`?**
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **What connects `config`, `eslintConfig`, `nextConfig` to the rest of the system?**
-  _119 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _149 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**

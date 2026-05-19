@@ -2,6 +2,7 @@
 
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState, type ComponentType } from "react";
 import {
     SiExpress,
@@ -19,10 +20,10 @@ import {
 } from "react-icons/si";
 
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { MdEditDocument, MdOutlineEmail } from "react-icons/md";
+import { GrDocumentText } from "react-icons/gr";
+import { MdOutlineEmail } from "react-icons/md";
 import { ContactFormDialog } from "./contact-form";
 import { Button } from "./ui/button";
-import { GrDocumentNotes, GrDocumentText } from "react-icons/gr";
 
 type TechStackItem = {
     name: string;
@@ -208,14 +209,10 @@ export default function HeroSection() {
                     <div className="flex flex-wrap items-center gap-2 transition-all duration-600 ease-out delay-200 translate-y-0 opacity-100">
                         <div className="flex flex-wrap items-center gap-2">
                             <Button
+                                render={<Link href="/about/resume" />}
+                                nativeButton={false}
                                 aria-label="Show Resume"
                                 variant="default"
-                                onClick={() =>
-                                    window.open(
-                                        "https://drive.google.com/file/d/1E5FovesI96cUkiXMnEgkI0B8_dcYvmoK/view?usp=sharing",
-                                        "_blank",
-                                    )
-                                }
                             >
                                 <GrDocumentText />
                                 <span>Show Resume</span>

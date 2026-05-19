@@ -27,11 +27,9 @@ export default function FooterSection() {
                                 <FaEnvelope size={20} />
                             </a>
                             <Link
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 aria-label="Resume"
                                 className="flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
-                                href="/narsi_resume.pdf"
+                                href="/about/resume"
                             >
                                 <FaFile size={20} />
                             </Link>

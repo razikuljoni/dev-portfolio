@@ -95,9 +95,18 @@ export default function CommandPalette({
         return [...sectionItems, ...blogItems, ...projectItems];
     }, []);
 
+    // Wrap onOpenChange to clear query when the palette closes — event-driven, not effect-driven
+    const handleOpenChange = useCallback(
+        (next: boolean) => {
+            if (!next) setQuery("");
+            onOpenChange(next);
+        },
+        [onOpenChange],
+    );
+
     const handleSelect = useCallback(
         (item: SearchItem) => {
-            onOpenChange(false);
+            handleOpenChange(false);
             if (item.category === "section") {
                 if (item.href.startsWith("http")) {
                     window.open(item.href, "_blank", "noopener,noreferrer");
@@ -111,29 +120,23 @@ export default function CommandPalette({
                 window.location.href = item.href;
             }
         },
-        [onOpenChange],
+        [handleOpenChange],
     );
 
-    const onOpenChangeEvent = useEffectEvent(onOpenChange);
+    const handleOpenChangeEvent = useEffectEvent(handleOpenChange);
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
             if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault();
-                onOpenChangeEvent(!open);
+                handleOpenChangeEvent(!open);
             }
             if (e.key === "Escape" && open) {
-                onOpenChangeEvent(false);
+                handleOpenChangeEvent(false);
             }
         };
         document.addEventListener("keydown", down);
         return () => document.removeEventListener("keydown", down);
-    }, [open]);
-
-    useEffect(() => {
-        if (!open) {
-            setQuery("");
-        }
     }, [open]);
 
     return (
@@ -152,11 +155,11 @@ export default function CommandPalette({
                             role="button"
                             tabIndex={0}
                             aria-label="Close command palette"
-                            onClick={() => onOpenChange(false)}
+                            onClick={() => handleOpenChange(false)}
                             onKeyDown={(event) => {
                                 if (event.key === "Enter" || event.key === " ") {
                                     event.preventDefault();
-                                    onOpenChange(false);
+                                    handleOpenChange(false);
                                 }
                             }}
                         />

@@ -2,14 +2,15 @@
 
 import {
     createContext,
+    startTransition,
+    use,
     useCallback,
-    useContext,
     useEffect,
     useMemo,
+    useRef,
     useState,
     type ReactNode,
 } from "react";
-import { flushSync } from "react-dom";
 
 type Theme = "light" | "dark";
 
@@ -35,10 +36,12 @@ const applyThemeClass = (theme: Theme) => {
 };
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-    const [hasManualPreference, setHasManualPreference] = useState(() => {
-        if (typeof window === "undefined") return false;
-        return localStorage.getItem(THEME_STORAGE_KEY) !== null;
-    });
+    const hasManualPreferenceRef = useRef(
+        typeof window === "undefined"
+            ? false
+            : localStorage.getItem(THEME_STORAGE_KEY) !== null,
+    );
+    const mediaCleanupRef = useRef<(() => void) | null>(null);
 
     const [theme, setTheme] = useState<Theme>(() => {
         if (typeof window === "undefined") return "dark";
@@ -48,7 +51,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     });
 
     useEffect(() => {
-        if (hasManualPreference) {
+        if (hasManualPreferenceRef.current) {
             return undefined;
         }
 
@@ -65,6 +68,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
             media.addListener(onChange);
         }
 
+        mediaCleanupRef.current = () => {
+            if (media.removeEventListener) {
+                media.removeEventListener("change", onChange);
+            } else {
+                media.removeListener(onChange);
+            }
+        };
+
         return () => {
             if (media.removeEventListener) {
                 media.removeEventListener("change", onChange);
@@ -72,10 +83,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
                 media.removeListener(onChange);
             }
         };
-    }, [hasManualPreference]);
+    }, []);
 
     const setThemeWithTransition = useCallback((nextTheme: Theme) => {
-        setHasManualPreference(true);
+        hasManualPreferenceRef.current = true;
+        mediaCleanupRef.current?.();
+        mediaCleanupRef.current = null;
         window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -93,7 +106,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
                     startViewTransition?: (cb: () => void) => { finished: Promise<void> };
                 }
             ).startViewTransition?.(() => {
-                flushSync(() => {
+                startTransition(() => {
                     apply();
                 });
             });
@@ -118,7 +131,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 }
 
 export function useTheme() {
-    const context = useContext(ThemeContext);
+    const context = use(ThemeContext);
     if (!context) {
         throw new Error("useTheme must be used within ThemeProvider");
     }

@@ -1,12 +1,12 @@
 # components/ — React Components
 
 ## OVERVIEW
-37 React components — feature sections + UI primitives. React 19, TypeScript, Tailwind CSS 4, Framer Motion.
+23 React components — feature sections + UI primitives. React 19, TypeScript, Tailwind CSS 4, Framer Motion.
 
 ## STRUCTURE
 ```
 components/
-├── ui/              # shadcn-style primitives (20 files)
+├── ui/              # shadcn-style primitives (9 files)
 ├── hero-section.tsx        # Home hero
 ├── about-section.tsx       # About
 ├── experience-section.tsx  # Experience timeline
@@ -18,8 +18,7 @@ components/
 ├── header-section.tsx      # Navigation header
 ├── footer-section.tsx      # Site footer
 ├── command-palette.tsx     # CMD+K search
-├── background-paths.tsx    # Floating SVG paths
-└── component-example.tsx   # Demo component
+└── background-paths.tsx    # Floating SVG paths
 ```
 
 ## CONVENTIONS

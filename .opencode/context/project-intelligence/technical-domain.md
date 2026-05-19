@@ -1,9 +1,9 @@
-<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.1 | Updated: 2026-05-17 -->
+<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.2 | Updated: 2026-05-19 -->
 
 # Technical Domain
 
 **Purpose**: Tech stack, architecture, and development patterns for dev-portfolio.
-**Last Updated**: 2026-05-17
+**Last Updated**: 2026-05-19
 
 ## Quick Reference
 **Update Triggers**: Library upgrades | New components | Architecture changes
@@ -62,6 +62,63 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 // forwardRef + cn() + variants
 ```
 
+### Button + Link (avoids nested interactive elements)
+```typescript
+// GOOD — renders as single <a> styled as button
+<Button render={<Link href="/about/resume" />} nativeButton={false}
+        aria-label="Show Resume" variant="default">
+    <GrDocumentText />
+    <span>Show Resume</span>
+</Button>
+
+// BAD — <a> wrapping <button>, invalid HTML
+<Link href="/about/resume"><Button>...</Button></Link>
+```
+
+### Theme Init Script (next/script)
+```typescript
+// app/layout.tsx — replaces dangerouslySetInnerHTML
+<Script id="theme-init" strategy="beforeInteractive">
+    {`document.documentElement.classList.toggle("dark", ...)`}
+</Script>
+```
+
+### React 19 `use()` Hook
+```typescript
+// theme-provider.tsx — replaces useContext
+import { use } from "react";
+// ...
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export function useTheme() {
+    const context = use(ThemeContext);
+    if (!context) throw new Error("useTheme must be within ThemeProvider");
+    return context;
+}
+```
+
+### Print-Friendly Resume
+```typescript
+// resume-content.tsx — beforeprint/afterprint JS events
+useEffect(() => {
+    const handleBeforePrint = () => {
+        const header = document.querySelector("header");
+        const wrapper = document.querySelector(".resume-page-wrapper");
+        header!.style.display = "none";
+        wrapper!.classList.add("printing");
+    };
+    const handleAfterPrint = () => {
+        const header = document.querySelector("header");
+        const wrapper = document.querySelector(".resume-page-wrapper");
+        header!.style.display = "";
+        wrapper!.classList.remove("printing");
+    };
+    window.addEventListener("beforeprint", handleBeforePrint);
+    window.addEventListener("afterprint", handleAfterPrint);
+    return () => { window.removeEventListener("beforeprint", handleBeforePrint);
+                   window.removeEventListener("afterprint", handleAfterPrint); };
+}, []);
+```
+
 ## Naming Conventions
 | Type | Convention | Example |
 |------|-----------|---------|
@@ -76,8 +133,11 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 - `@/` path aliases for imports (e.g. `@/components/ui/button`)
 - Tailwind CSS for all styling (no inline styles)
 - shadcn/ui pattern: `cn()` + `cva` + forwardRef + variants
-- Framer Motion for page/component animations
+- Framer Motion for page/component animations; `LazyMotion`/`m`/`domAnimation` for bundle savings
 - `"use client"` directive for interactive components
+- `Button render={<Link />} nativeButton={false}` — never nest `<a>` inside `<button>`
+- `next/script` with `strategy="beforeInteractive"` for theme init (not inline `<script>`)
+- React 19 `use()` hook replaces `useContext` for context consumption
 
 ## Security Requirements
 - Client-side form validation (email regex, required fields, min length)
@@ -86,7 +146,12 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 - Proper HTTP headers via Next.js config
 
 ## 📂 Codebase References
-**Feature components**: `app/page.tsx`, `components/*.tsx` — section compositions
-**UI primitives**: `components/ui/*.tsx` — shadcn-style components
+**Feature components**: `app/page.tsx`, `components/*.tsx` — section compositions (23 files)
+**UI primitives**: `components/ui/*.tsx` — shadcn-style components (9 files: accordion, button, card, empty, input, not-found-2, not-found-content, textarea, toggle-button)
+**Resume route**: `app/about/resume/page.tsx` + `resume-content.tsx` — server page + client component (print via beforeprint/afterprint)
 **Route handlers**: `app/feed.xml/route.ts` — RSS feed
+**Button+Link pattern**: `components/hero-section.tsx` (line ~211) — `render={<Link />} nativeButton={false}`
+**Theme init**: `app/layout.tsx` — `Script id="theme-init" strategy="beforeInteractive"`
+**Theme provider**: `components/theme-provider.tsx` — React 19 `use()` hook for context
+**Dock**: `components/ui/dock.tsx` — `LazyMotion`/`domAnimation` for reduced bundle
 **Config**: `package.json`, `tsconfig.json`, `next.config.*`

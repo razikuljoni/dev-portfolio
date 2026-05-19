@@ -11,6 +11,9 @@ app/
 ├── loading.tsx      # Root loading state
 ├── not-found.tsx    # 404 page
 ├── globals.css      # Global Tailwind styles
+├── about/resume/    # /about/resume route
+│   ├── page.tsx         # Server page (SEO metadata)
+│   └── resume-content.tsx  # Client component (full resume)
 ├── blogs/           # /blogs routes
 │   ├── page.tsx     # Blog listing
 │   ├── loading.tsx  # Blog skeleton

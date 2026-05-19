@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/src/components/theme-provider";
 import { siteConfig } from "@/src/lib/site";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-sans" });
@@ -31,9 +32,8 @@ export default function RootLayout({
     return (
         <html lang="en" className={jetbrainsMono.variable} suppressHydrationWarning>
             <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `(() => {
+                <Script id="theme-init" strategy="beforeInteractive">
+                    {`(() => {
   try {
     const stored = localStorage.getItem("theme");
     const systemDark = typeof window.matchMedia === "function"
@@ -44,9 +44,8 @@ export default function RootLayout({
     document.documentElement.style.colorScheme = theme;
     document.documentElement.dataset.theme = theme;
   } catch (e) {}
-})();`,
-                    }}
-                />
+})();`}
+                </Script>
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 <link
