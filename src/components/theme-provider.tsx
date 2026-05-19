@@ -37,9 +37,7 @@ const applyThemeClass = (theme: Theme) => {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
     const hasManualPreferenceRef = useRef(
-        typeof window === "undefined"
-            ? false
-            : localStorage.getItem(THEME_STORAGE_KEY) !== null,
+        typeof window === "undefined" ? false : localStorage.getItem(THEME_STORAGE_KEY) !== null,
     );
     const mediaCleanupRef = useRef<(() => void) | null>(null);
 

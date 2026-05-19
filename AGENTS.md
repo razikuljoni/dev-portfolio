@@ -5,9 +5,11 @@
 **Branch:** dev
 
 ## OVERVIEW
+
 Next.js 16 portfolio site for Razikul Islam Joni. Full-stack with App Router, Framer Motion animations, shadcn/ui component system.
 
 ## STRUCTURE
+
 ```
 dev-portfolio/
 ├── app/           # Routes, layouts, SEO (20 files)
@@ -26,17 +28,19 @@ dev-portfolio/
 ```
 
 ## WHERE TO LOOK
-| Task | Location |
-|------|----------|
-| Add/edit page | `app/` |
+
+| Task                    | Location                                            |
+| ----------------------- | --------------------------------------------------- |
+| Add/edit page           | `app/`                                              |
 | Add/edit resume content | `app/about/resume/` (page.tsx + resume-content.tsx) |
-| Add/edit component | `components/` or `components/ui/` |
-| Update portfolio data | `db/` (blogs.ts, projects.json) |
-| Update site config | `lib/site.ts` |
-| Style utilities | `lib/utils.ts` (cn()) |
-| Type definitions | `types/project.ts` |
+| Add/edit component      | `components/` or `components/ui/`                   |
+| Update portfolio data   | `db/` (blogs.ts, projects.json)                     |
+| Update site config      | `lib/site.ts`                                       |
+| Style utilities         | `lib/utils.ts` (cn())                               |
+| Type definitions        | `types/project.ts`                                  |
 
 ## CONVENTIONS
+
 - Next.js 16 App Router (file-based routing)
 - `@/` path aliases (e.g. `@/components/ui/button`)
 - React 19 + TypeScript strict mode
@@ -46,11 +50,13 @@ dev-portfolio/
 - ESLint 9 with next/core-web-vitals + TypeScript plugins
 
 ## ANTI-PATTERNS
+
 - Don't use Pages Router (App Router only)
 - Don't inline styles (use Tailwind classes)
 - Don't use `any` type (strict mode enforced)
 
 ## COMMANDS
+
 ```bash
 pnpm dev      # Start dev server (localhost:3000)
 pnpm build    # Production build
@@ -58,6 +64,7 @@ pnpm lint     # ESLint check
 ```
 
 ## NOTES
+
 - Graphify knowledge graph at `graphify-out/` — run `/graphify` to query
 - 533 nodes, 997 edges across 75 communities (see GRAPH_REPORT.md)
 - God nodes: cn() (131 edges), Button() (18), siteConfig (16)
@@ -73,6 +80,7 @@ This project has a knowledge graph at graphify-out/ with god nodes, community st
 When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
 
 Rules:
+
 - ALWAYS read graphify-out/GRAPH_REPORT.md before reading any source files, running grep/glob searches, or answering codebase questions. The graph is your primary map of the codebase.
 - IF graphify-out/wiki/index.md EXISTS, navigate it instead of reading raw files
 - For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
@@ -89,16 +97,18 @@ Rules:
 When users ask you to perform tasks, check if any of the available skills below can help complete the task more effectively. Skills provide specialized capabilities and domain knowledge.
 
 How to use skills:
+
 - Invoke: `npx openskills read <skill-name>` (run in your shell)
-  - For multiple: `npx openskills read skill-one,skill-two`
+    - For multiple: `npx openskills read skill-one,skill-two`
 - The skill content will load with detailed instructions on how to complete the task
 - Base directory provided in output for resolving bundled resources (references/, scripts/, assets/)
 
 Usage notes:
+
 - Only use skills listed in <available_skills> below
 - Do not invoke a skill that is already loaded in your context
 - Each skill invocation is stateless
-</usage>
+  </usage>
 
 <available_skills>
 
@@ -175,6 +185,7 @@ Usage notes:
 </skill>
 
 </available_skills>
+
 <!-- SKILLS_TABLE_END -->
 
 </skills_system>

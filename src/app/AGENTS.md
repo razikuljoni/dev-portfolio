@@ -1,9 +1,11 @@
 # app/ — Routes & Layouts
 
 ## OVERVIEW
+
 Next.js 16 App Router pages. Route groups, SEO metadata, loading/error states.
 
 ## STRUCTURE
+
 ```
 app/
 ├── layout.tsx       # Root layout (fonts, metadata, providers)
@@ -36,6 +38,7 @@ app/
 ```
 
 ## CONVENTIONS
+
 - Route groups `(seo)` for logical organization
 - Dynamic routes `[slug]` (blogs), `[name]` (projects)
 - Separate `loading.tsx` per route segment

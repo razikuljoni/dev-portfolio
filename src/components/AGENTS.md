@@ -1,9 +1,11 @@
 # components/ — React Components
 
 ## OVERVIEW
+
 23 React components — feature sections + UI primitives. React 19, TypeScript, Tailwind CSS 4, Framer Motion.
 
 ## STRUCTURE
+
 ```
 components/
 ├── ui/              # shadcn-style primitives (9 files)
@@ -22,6 +24,7 @@ components/
 ```
 
 ## CONVENTIONS
+
 - Feature components: `export default function ComponentName()`
 - UI primitives: named exports via `export { Name }` (shadcn pattern)
 - `cn()` from `@/lib/utils` for class merging

@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python virtual environment (not needed for Next.js)
+venv/
+__pycache__/
+*.pyc
+
+# Session artifacts (change every session)
+.omo/run-continuation/
+.sisyphus/run-continuation/   # if kept
+# Build artifacts
+.next/
+*.tsbuildinfo
+# OS
+.DS_Store

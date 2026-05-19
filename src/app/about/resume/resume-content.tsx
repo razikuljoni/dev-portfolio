@@ -346,8 +346,6 @@ export default function ResumeContent() {
                     </div>
                 </section>
             </div>
-
-
         </div>
     );
 }

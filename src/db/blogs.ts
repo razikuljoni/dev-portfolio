@@ -60,7 +60,8 @@ export const blogs: BlogPost[] = [
         slug: "portfolio-information-architecture",
         title: "Designing a Portfolio Information Architecture That Converts",
         date: "2026-04-22",
-        summary: "A practical structure for preview, listing, and detail pages in developer portfolios.",
+        summary:
+            "A practical structure for preview, listing, and detail pages in developer portfolios.",
         readTime: "8 min read",
         content: [
             "A strong portfolio should reduce cognitive load: preview sections on the homepage, full collections on list pages, and complete narratives on detail pages.",

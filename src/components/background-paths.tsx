@@ -14,11 +14,7 @@ function FloatingPaths({ position }: { position: number }) {
 
     return (
         <div className="absolute inset-0 pointer-events-none opacity-30">
-            <svg
-                className="h-full w-full text-foreground"
-                viewBox="0 0 696 316"
-                fill="none"
-            >
+            <svg className="h-full w-full text-foreground" viewBox="0 0 696 316" fill="none">
                 <title>Background Paths</title>
                 {paths.map((path) => {
                     const duration = 20 + path.id * 0.35;
@@ -58,7 +54,11 @@ export function BackgroundPaths({ children }: { children: React.ReactNode }) {
                 </div>
 
                 <div>
-                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 2 }}
+                    >
                         {children}
                     </m.div>
                 </div>

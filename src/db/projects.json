@@ -63,14 +63,7 @@
             "liveSite": "https://cosketch.razikuljoni.dev",
             "github": "https://github.com/razikuljoni/cosketch",
             "tag": "Featured",
-            "techStack": [
-                "Next.js",
-                "TypeScript",
-                "Node.js",
-                "WebSocket",
-                "Docker",
-                "PostgreSQL"
-            ]
+            "techStack": ["Next.js", "TypeScript", "Node.js", "WebSocket", "Docker", "PostgreSQL"]
         },
         {
             "id": "audora",
@@ -86,14 +79,7 @@
             "liveSite": "https://audora.razikuljoni.dev",
             "github": "https://github.com/razikuljoni/audora",
             "tag": "Featured",
-            "techStack": [
-                "React",
-                "TypeScript",
-                "WebRTC",
-                "Node.js",
-                "Redis",
-                "TailwindCSS"
-            ]
+            "techStack": ["React", "TypeScript", "WebRTC", "Node.js", "Redis", "TailwindCSS"]
         },
         {
             "id": "coming-soon",
@@ -107,13 +93,7 @@
             "liveSite": "https://coming-soon.razikuljoni.dev",
             "github": "https://github.com/razikuljoni/coming-soon",
             "tag": "In Progress",
-            "techStack": [
-                "React Js",
-                "Node Js",
-                "Express Js",
-                "Mongo DB",
-                "TailwindCss"
-            ]
+            "techStack": ["React Js", "Node Js", "Express Js", "Mongo DB", "TailwindCss"]
         }
     ]
 }

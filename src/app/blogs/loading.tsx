@@ -6,10 +6,7 @@ export default function Loading() {
             </div>
             <div className="mt-8 flex flex-col gap-4">
                 {Array.from({ length: 3 }).map((_, i) => (
-                    <div
-                        key={i}
-                        className="rounded-lg border border-border/50 p-3 sm:p-4"
-                    >
+                    <div key={i} className="rounded-lg border border-border/50 p-3 sm:p-4">
                         <div className="flex w-full flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                             <div className="h-5 w-3/5 rounded bg-muted" />
                             <div className="mt-1 flex items-center gap-1.5 sm:mt-0">
