@@ -4,8 +4,9 @@ import { blogs } from "@/src/db/blogs";
 import projectsData from "@/src/db/projects.json";
 import { Command } from "cmdk";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
-import { BookOpen, Briefcase, FileText, FolderGit2, Github, Wrench } from "lucide-react";
+import { BookOpen, Briefcase, FileText, FolderGit2, Wrench } from "lucide-react";
 import { useCallback, useEffect, useEffectEvent, useMemo, useState } from "react";
+import { FaGithub } from "react-icons/fa6";
 
 type SectionItem = {
     id: string;
@@ -59,7 +60,7 @@ const sectionItems: SectionItem[] = [
         id: "github",
         label: "GitHub",
         href: "https://github.com/razikuljoni",
-        icon: <Github className="size-4" />,
+        icon: <FaGithub size={16} />,
         category: "section",
     },
 ];
