@@ -2,12 +2,14 @@
 
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState, type MouseEvent } from "react";
-import CommandPalette from "./command-palette";
 import Toggle from "./ui/toggle-button";
+
+const CommandPalette = dynamic(() => import("./command-palette"), { ssr: false });
 
 const navLinks = [
     { label: "About", href: "/#about" },
@@ -86,6 +88,7 @@ export default function Header() {
 
                         <div className="flex items-center gap-3">
                             <button
+                                type="button"
                                 onClick={() => setPaletteOpen(true)}
                                 className="relative inline-flex items-start justify-start rounded-md border border-input bg-transparent px-3 py-1.5 text-sm font-medium whitespace-nowrap text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 sm:pr-10 h-8 min-h-8 w-40 min-w-20 md:w-44 lg:w-60"
                             >
@@ -101,6 +104,7 @@ export default function Header() {
                             <Toggle />
 
                             <button
+                                type="button"
                                 onClick={() => setMobileOpen(true)}
                                 className="flex items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground md:hidden"
                                 aria-label="Open menu"
@@ -120,18 +124,11 @@ export default function Header() {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <div
-                                className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-                                role="button"
-                                tabIndex={0}
+                            <button
+                                type="button"
+                                className="absolute inset-0 cursor-default bg-black/50 backdrop-blur-sm"
                                 aria-label="Close mobile menu"
                                 onClick={closeMobile}
-                                onKeyDown={(event) => {
-                                    if (event.key === "Enter" || event.key === " ") {
-                                        event.preventDefault();
-                                        closeMobile();
-                                    }
-                                }}
                             />
                             <m.div
                                 className="absolute top-0 right-0 bottom-0 w-72 bg-background border-l border-border shadow-2xl"
@@ -143,6 +140,7 @@ export default function Header() {
                                 <div className="flex items-center justify-between border-b border-border px-4 py-3">
                                     <span className="text-sm font-semibold">Navigation</span>
                                     <button
+                                        type="button"
                                         onClick={closeMobile}
                                         className="flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                                         aria-label="Close menu"
@@ -170,7 +168,9 @@ export default function Header() {
                     )}
                 </AnimatePresence>
 
-                <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
+                {paletteOpen ? (
+                    <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
+                ) : null}
             </>
         </LazyMotion>
     );

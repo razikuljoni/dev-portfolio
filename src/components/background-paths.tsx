@@ -48,12 +48,11 @@ export function BackgroundPaths({ children }: { children: React.ReactNode }) {
     return (
         <LazyMotion features={domAnimation}>
             <div className="relative w-full overflow-hidden bg-background">
-                <div className="absolute inset-0">
-                    <FloatingPaths position={1} />
+                <div className="absolute inset-0 pointer-events-none">
+                    <FloatingPaths position={0.5} />
                     <FloatingPaths position={-1} />
                 </div>
-
-                <div>
+                <div className="relative z-10">
                     <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

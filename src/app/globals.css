@@ -314,6 +314,7 @@
     }
 }
 
+/* Theme Transition Animation and Styles */
 @supports (view-transition-name: root) {
     html.theme-transition::view-transition-old(root) {
         animation: none;
@@ -339,9 +340,9 @@
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: 0.5ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: 0.5ms !important;
         scroll-behavior: auto !important;
     }
 }
@@ -350,6 +351,7 @@
     @apply py-20;
 }
 
+/* Print Page specific styles */
 @media print {
     header {
         display: none !important;
@@ -370,4 +372,95 @@
     section {
         page-break-inside: avoid;
     }
+}
+
+@supports (animation-timeline: view()) {
+    .reveal {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 28%;
+    }
+
+    .reveal-soft {
+        animation: reveal-soft linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+
+    .reveal-stagger > * {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+
+    .reveal-stagger > *:nth-child(2) {
+        animation-range: entry 4% cover 34%;
+    }
+    .reveal-stagger > *:nth-child(3) {
+        animation-range: entry 8% cover 38%;
+    }
+    .reveal-stagger > *:nth-child(4) {
+        animation-range: entry 12% cover 42%;
+    }
+    .reveal-stagger > *:nth-child(5) {
+        animation-range: entry 16% cover 46%;
+    }
+    .reveal-stagger > *:nth-child(6) {
+        animation-range: entry 20% cover 50%;
+    }
+    .reveal-stagger > *:nth-child(7) {
+        animation-range: entry 24% cover 54%;
+    }
+    .reveal-stagger > *:nth-child(8) {
+        animation-range: entry 28% cover 58%;
+    }
+
+    @keyframes reveal-up {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 24px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes reveal-soft {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+.interactive-card {
+    transition:
+        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 320ms ease,
+        box-shadow 320ms ease;
+}
+
+.interactive-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--foreground) 30%, transparent);
+    box-shadow: 0 8px 24px -12px rgb(0 0 0 / 0.18);
+}
+
+.tap-shrink {
+    transition: transform 200ms ease;
+}
+.tap-shrink:active {
+    transform: scale(0.97);
+}
+
+.cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
+}
+
+.role-tile {
+    will-change: transform, opacity;
 }

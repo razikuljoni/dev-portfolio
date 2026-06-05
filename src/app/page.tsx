@@ -1,13 +1,23 @@
-import AboutSection from "@/src/components/about-section";
-import AiDiscoverySection from "@/src/components/ai-discovery-section";
 import { BackgroundPaths } from "@/src/components/background-paths";
-import Blogs from "@/src/components/blogs-section";
-import Experience from "@/src/components/experience-section";
-import FooterSection from "@/src/components/footer-section";
-import GithubSection from "@/src/components/github-section";
 import HeroSection from "@/src/components/hero-section";
-import Projects from "@/src/components/projects-section";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const AboutSection = dynamic(() => import("@/src/components/about-section").then((m) => m.default));
+const Experience = dynamic(() =>
+    import("@/src/components/experience-section").then((m) => m.default),
+);
+const Projects = dynamic(() => import("@/src/components/projects-section").then((m) => m.default));
+const AiDiscoverySection = dynamic(() =>
+    import("@/src/components/ai-discovery-section").then((m) => m.default),
+);
+const Blogs = dynamic(() => import("@/src/components/blogs-section").then((m) => m.default));
+const GithubSection = dynamic(() =>
+    import("@/src/components/github-section").then((m) => m.default),
+);
+const FooterSection = dynamic(() =>
+    import("@/src/components/footer-section").then((m) => m.default),
+);
 
 export const metadata: Metadata = {
     title: "MD Razikul Islam Joni — Full Stack / MERN Stack Developer",
@@ -22,13 +32,27 @@ export default function Page() {
                 <BackgroundPaths>
                     <HeroSection />
                 </BackgroundPaths>
-                <AboutSection />
-                <Experience />
-                <Projects />
-                <AiDiscoverySection />
-                <Blogs />
-                <GithubSection />
-                <FooterSection />
+                <div className="cv-auto">
+                    <AboutSection />
+                </div>
+                <div className="cv-auto">
+                    <Experience />
+                </div>
+                <div className="cv-auto">
+                    <Projects />
+                </div>
+                <div className="cv-auto">
+                    <AiDiscoverySection />
+                </div>
+                <div className="cv-auto">
+                    <Blogs />
+                </div>
+                <div className="cv-auto">
+                    <GithubSection />
+                </div>
+                <div className="cv-auto">
+                    <FooterSection />
+                </div>
             </div>
         </main>
     );

@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import { projects } from "@/src/db/projects.json";
-import { blogs } from "@/src/db/blogs";
-import { answerWithSources, searchBlogs, searchProjects } from "@/src/lib/ai-discovery";
+import type { BlogPost } from "@/src/db/blogs";
+import type { Project } from "@/src/types/project";
+import type { AnswerSnippet, DiscoveryResult } from "@/src/lib/ai-discovery";
 
 type DiscoveryMode = "all" | "projects" | "blogs";
 
@@ -13,6 +13,42 @@ type AiDiscoverySectionProps = {
     mode?: DiscoveryMode;
     title?: string;
     description?: string;
+};
+
+type DiscoveryDependencies = {
+    projects: Project[];
+    blogs: BlogPost[];
+    searchProjects: (query: string, items: Project[]) => DiscoveryResult<Project>[];
+    searchBlogs: (query: string, items: BlogPost[]) => DiscoveryResult<BlogPost>[];
+    answerWithSources: (
+        question: string,
+        projects: Project[],
+        blogs: BlogPost[],
+    ) => AnswerSnippet[];
+};
+
+let discoveryDependenciesPromise: Promise<DiscoveryDependencies> | null = null;
+
+const loadDiscoveryDependencies = async (): Promise<DiscoveryDependencies> => {
+    if (!discoveryDependenciesPromise) {
+        discoveryDependenciesPromise = (async () => {
+            const projectsModule = (await import("@/src/db/projects.json")) as unknown as {
+                projects: Project[];
+            };
+            const blogsModule = await import("@/src/db/blogs");
+            const discoveryModule = await import("@/src/lib/ai-discovery");
+
+            return {
+                projects: projectsModule.projects,
+                blogs: blogsModule.blogs,
+                searchProjects: discoveryModule.searchProjects,
+                searchBlogs: discoveryModule.searchBlogs,
+                answerWithSources: discoveryModule.answerWithSources,
+            };
+        })();
+    }
+
+    return discoveryDependenciesPromise;
 };
 
 const promptSuggestions = [
@@ -34,19 +70,41 @@ export default function AiDiscoverySection({
     description = "Ask in plain language to find relevant projects and blog insights.",
 }: AiDiscoverySectionProps) {
     const [query, setQuery] = useState("");
+    const [dependencies, setDependencies] = useState<DiscoveryDependencies | null>(null);
+    const loadStartedRef = useRef(false);
+    const hasQuery = query.trim().length > 0;
+    const isDependenciesLoading = hasQuery && !dependencies;
+
+    useEffect(() => {
+        if (!hasQuery || dependencies || loadStartedRef.current) return;
+
+        loadStartedRef.current = true;
+
+        let mounted = true;
+        loadDiscoveryDependencies().then((loaded) => {
+            if (!mounted) return;
+            setDependencies(loaded);
+        });
+
+        return () => {
+            mounted = false;
+        };
+    }, [dependencies, hasQuery]);
 
     const projectResults = useMemo(() => {
-        if (mode === "blogs") return [];
-        return searchProjects(query, projects);
-    }, [mode, query]);
+        if (!hasQuery || !dependencies || mode === "blogs") return [];
+        return dependencies.searchProjects(query, dependencies.projects);
+    }, [dependencies, hasQuery, mode, query]);
 
     const blogResults = useMemo(() => {
-        if (mode === "projects") return [];
-        return searchBlogs(query, blogs);
-    }, [mode, query]);
+        if (!hasQuery || !dependencies || mode === "projects") return [];
+        return dependencies.searchBlogs(query, dependencies.blogs);
+    }, [dependencies, hasQuery, mode, query]);
 
-    const answers = useMemo(() => answerWithSources(query, projects, blogs), [query]);
-    const hasQuery = query.trim().length > 0;
+    const answers = useMemo(() => {
+        if (!hasQuery || !dependencies) return [];
+        return dependencies.answerWithSources(query, dependencies.projects, dependencies.blogs);
+    }, [dependencies, hasQuery, query]);
 
     return (
         <section className="container mx-auto mt-8 max-w-(--content-max-width) px-4">
@@ -64,10 +122,15 @@ export default function AiDiscoverySection({
                 </div>
 
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                    <label htmlFor="ai-query" className="sr-only">
+                        {title}
+                    </label>
                     <input
+                        id="ai-query"
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
                         placeholder="Try: realtime collaboration projects, Rust posts, Stripe integrations..."
+                        aria-label={title}
                         className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
                     />
                     {hasQuery && (
@@ -98,6 +161,11 @@ export default function AiDiscoverySection({
 
                 {hasQuery && (
                     <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] text-muted-foreground">
+                        {isDependenciesLoading && (
+                            <span className="rounded-full border border-border bg-background px-2.5 py-1">
+                                Loading search index…
+                            </span>
+                        )}
                         {mode !== "blogs" && (
                             <span className="rounded-full border border-border bg-background px-2.5 py-1">
                                 {projectResults.length} project matches
@@ -121,7 +189,11 @@ export default function AiDiscoverySection({
                                 Project recommendations
                             </h4>
                             <div className="space-y-2">
-                                {projectResults.length > 0 ? (
+                                {isDependenciesLoading ? (
+                                    <div className="rounded-md border border-dashed border-border p-3 text-xs text-muted-foreground">
+                                        Building search index…
+                                    </div>
+                                ) : projectResults.length > 0 ? (
                                     projectResults.map((result) => (
                                         <Link
                                             key={result.item.id}
@@ -159,7 +231,11 @@ export default function AiDiscoverySection({
                                 Related blogs
                             </h4>
                             <div className="space-y-2">
-                                {blogResults.length > 0 ? (
+                                {isDependenciesLoading ? (
+                                    <div className="rounded-md border border-dashed border-border p-3 text-xs text-muted-foreground">
+                                        Building search index…
+                                    </div>
+                                ) : blogResults.length > 0 ? (
                                     blogResults.map((result) => (
                                         <Link
                                             key={result.item.slug}
@@ -197,7 +273,11 @@ export default function AiDiscoverySection({
                         Q&A (retrieval only)
                     </h4>
                     <div className="space-y-2">
-                        {answers.length > 0 ? (
+                        {isDependenciesLoading ? (
+                            <div className="rounded-md border border-dashed border-border p-3 text-xs text-muted-foreground">
+                                Building search index…
+                            </div>
+                        ) : answers.length > 0 ? (
                             answers.map((answer) => (
                                 <Link
                                     key={`${answer.kind}-${answer.title}-${answer.href}`}

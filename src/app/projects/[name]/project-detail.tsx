@@ -46,11 +46,11 @@ function StatusBadge({ status }: { status?: string }) {
     );
 }
 
-export default function ProjectDetail({ project }: ProjectDetailProps) {
-    const navigateTo = (path: string) => {
-        window.open(path, "_blank");
-    };
+const navigateTo = (path: string) => {
+    window.open(path, "_blank");
+};
 
+export default function ProjectDetail({ project }: ProjectDetailProps) {
     return (
         <LazyMotion features={domAnimation}>
             <m.div variants={containerVariants} initial="hidden" animate="visible">
@@ -73,6 +73,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                             <Image
                                 alt={project.name}
                                 fill
+                                priority
                                 className="object-cover"
                                 sizes="(max-width: 768px) 100vw, 896px"
                                 src={project.thumb}
