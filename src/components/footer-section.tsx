@@ -37,6 +37,13 @@ const resources = [
     { label: "llms.txt", href: "/llms.txt" },
 ];
 
+const renderSocialIcon = (Icon: IconComponent) => (
+    <Icon
+        className="size-4 transition-transform duration-300 group-hover/link:scale-110"
+        aria-hidden
+    />
+);
+
 export default function FooterSection() {
     return (
         <footer className="border-t border-border py-8 text-center reveal">
@@ -46,12 +53,7 @@ export default function FooterSection() {
                         {socials.map((social) => {
                             const className =
                                 "group/link flex size-11 items-center justify-center rounded-md border border-border bg-background text-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30 hover:bg-accent hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none";
-                            const content = (
-                                <social.Icon
-                                    className="size-4 transition-transform duration-300 group-hover/link:scale-110"
-                                    aria-hidden
-                                />
-                            );
+                            const content = renderSocialIcon(social.Icon);
 
                             if (social.internal) {
                                 return (
@@ -118,7 +120,7 @@ export default function FooterSection() {
                         </span>
                     ))}
                 </nav>
-                <p className="text-xs text-muted-foreground/70">
+                <p className="text-xs text-muted-foreground/70" suppressHydrationWarning>
                     © {new Date().getFullYear()} {siteConfig.name}
                 </p>
             </div>

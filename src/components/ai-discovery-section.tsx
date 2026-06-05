@@ -32,18 +32,40 @@ let discoveryDependenciesPromise: Promise<DiscoveryDependencies> | null = null;
 const loadDiscoveryDependencies = async (): Promise<DiscoveryDependencies> => {
     if (!discoveryDependenciesPromise) {
         discoveryDependenciesPromise = (async () => {
-            const projectsModule = (await import("@/src/db/projects.json")) as unknown as {
-                projects: Project[];
-            };
-            const blogsModule = await import("@/src/db/blogs");
-            const discoveryModule = await import("@/src/lib/ai-discovery");
+            const [projectsModule, blogsModule, discoveryModule] = await Promise.all([
+                import("@/src/db/projects.json"),
+                import("@/src/db/blogs"),
+                import("@/src/lib/ai-discovery"),
+            ]);
 
             return {
-                projects: projectsModule.projects,
-                blogs: blogsModule.blogs,
-                searchProjects: discoveryModule.searchProjects,
-                searchBlogs: discoveryModule.searchBlogs,
-                answerWithSources: discoveryModule.answerWithSources,
+                projects: (projectsModule as { projects: Project[] }).projects,
+                blogs: (blogsModule as { blogs: BlogPost[] }).blogs,
+                searchProjects: (
+                    discoveryModule as {
+                        searchProjects: (
+                            query: string,
+                            items: Project[],
+                        ) => DiscoveryResult<Project>[];
+                    }
+                ).searchProjects,
+                searchBlogs: (
+                    discoveryModule as {
+                        searchBlogs: (
+                            query: string,
+                            items: BlogPost[],
+                        ) => DiscoveryResult<BlogPost>[];
+                    }
+                ).searchBlogs,
+                answerWithSources: (
+                    discoveryModule as {
+                        answerWithSources: (
+                            question: string,
+                            projects: Project[],
+                            blogs: BlogPost[],
+                        ) => AnswerSnippet[];
+                    }
+                ).answerWithSources,
             };
         })();
     }
