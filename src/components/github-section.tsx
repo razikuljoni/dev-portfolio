@@ -1,10 +1,43 @@
 "use client";
 
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { GitHubCalendar } from "react-github-calendar";
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaUpRightFromSquare } from "react-icons/fa6";
 
+const GitHubCalendar = dynamic(
+    () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
+    {
+        ssr: false,
+    },
+);
+
 export default function GithubSection() {
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+    const [shouldRenderCalendar, setShouldRenderCalendar] = useState(false);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section || shouldRenderCalendar) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (!entry?.isIntersecting) return;
+
+                setShouldRenderCalendar(true);
+                observer.disconnect();
+            },
+            {
+                rootMargin: "200px 0px",
+            },
+        );
+
+        observer.observe(section);
+
+        return () => observer.disconnect();
+    }, [shouldRenderCalendar]);
+
     return (
         <LazyMotion features={domAnimation}>
             <section id="github" className="scroll-mt-24 py-6">
@@ -18,7 +51,10 @@ export default function GithubSection() {
                         </h2>
                     </div>
                 </div>
-                <div className="container mx-auto mt-8 max-w-(--content-max-width) px-4">
+                <div
+                    ref={sectionRef}
+                    className="container mx-auto mt-8 max-w-(--content-max-width) px-4"
+                >
                     <m.div
                         initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +83,11 @@ export default function GithubSection() {
                             </div>
                             <div className="flex flex-col gap-1 overflow-x-auto pb-2 md:overflow-visible">
                                 <div className="min-w-fit mx-auto">
-                                    <GitHubCalendar username="razikuljoni" />
+                                    {shouldRenderCalendar ? (
+                                        <GitHubCalendar username="razikuljoni" />
+                                    ) : (
+                                        <div className="h-28 w-[680px] max-w-full animate-pulse rounded-md border border-border/40 bg-muted/30" />
+                                    )}
                                 </div>
                             </div>
                         </div>

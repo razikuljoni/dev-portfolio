@@ -27,6 +27,14 @@ type SearchItem =
           description?: string;
       };
 
+const heading = (cat: "section" | "blog" | "project") => {
+    return (
+        <span className="px-2 py-1.5 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            {cat === "section" ? "Pages" : cat === "blog" ? "Blogs" : "Projects"}
+        </span>
+    );
+};
+
 const sectionItems: SectionItem[] = [
     {
         id: "about",
@@ -151,18 +159,11 @@ export default function CommandPalette({
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.15 }}
                     >
-                        <div
-                            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-                            role="button"
-                            tabIndex={0}
+                        <button
+                            type="button"
+                            className="fixed inset-0 cursor-default bg-black/50 backdrop-blur-sm"
                             aria-label="Close command palette"
                             onClick={() => handleOpenChange(false)}
-                            onKeyDown={(event) => {
-                                if (event.key === "Enter" || event.key === " ") {
-                                    event.preventDefault();
-                                    handleOpenChange(false);
-                                }
-                            }}
                         />
                         <m.div
                             className="relative z-10 w-full max-w-lg overflow-hidden rounded-xl border border-border bg-background shadow-2xl"
@@ -174,12 +175,14 @@ export default function CommandPalette({
                             <Command label="Command Palette" shouldFilter={true}>
                                 <div className="flex items-center border-b border-border px-3">
                                     <Command.Input
+                                        autoFocus
                                         placeholder="Search pages, blogs, projects..."
                                         value={query}
                                         onValueChange={setQuery}
                                         className="flex h-12 w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
                                     />
                                 </div>
+
                                 <Command.List className="max-h-72 overflow-y-auto p-2">
                                     <Command.Empty className="py-6 text-center text-sm text-muted-foreground">
                                         No results found.
@@ -192,15 +195,9 @@ export default function CommandPalette({
                                         return (
                                             <Command.Group
                                                 key={cat}
-                                                heading={
-                                                    <span className="px-2 py-1.5 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                                                        {cat === "section"
-                                                            ? "Pages"
-                                                            : cat === "blog"
-                                                              ? "Blogs"
-                                                              : "Projects"}
-                                                    </span>
-                                                }
+                                                heading={heading(
+                                                    cat as "section" | "blog" | "project",
+                                                )}
                                             >
                                                 {groupItems.map((item) => (
                                                     <Command.Item
