@@ -31,6 +31,14 @@ const nextConfig: NextConfig = {
     },
 };
 
-export default nextConfig;
+// Only initialize Cloudflare when running locally or on Cloudflare
+if (process.env.NODE_ENV === "development" || process.env.CLOUDFLARE_ENV === "production") {
+    // Dynamic import only when needed
+    import("@opennextjs/cloudflare")
+        .then((m) => m.initOpenNextCloudflareForDev())
+        .catch((err) => {
+            console.warn("Failed to initialize OpenNext Cloudflare:", err.message);
+        });
+}
 
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
+export default nextConfig;
