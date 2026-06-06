@@ -39,10 +39,7 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /> */}
                 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
                 <meta name="theme-color" content="#0b0d0e" media="(prefers-color-scheme: dark)" />
-                {/* <Script
-                    id="theme-init"
-                    strategy="beforeInteractive"
-                >{`(()=>{try{var e=localStorage.getItem("theme"),t="function"==typeof window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o="light"===e||"dark"===e?e:t?"dark":"light";document.documentElement.classList.toggle("dark","dark"===o),document.documentElement.style.colorScheme=o,document.documentElement.dataset.theme=o}catch(e){}})();`}</Script> */}
+                <link rel="manifest" href="/manifest.webmanifest" />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `(()=>{try{const e=localStorage.getItem("theme"),t="function"==typeof window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o="light"===e||"dark"===e?e:t?"dark":"light";document.documentElement.classList.toggle("dark","dark"===o),document.documentElement.style.colorScheme=o,document.documentElement.dataset.theme=o}catch(e){}})();`,
