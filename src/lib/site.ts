@@ -2,9 +2,9 @@ export const siteConfig = {
     name: "MD Razikul Islam Joni",
     title: "MD Razikul Islam Joni — Full Stack / MERN Stack Developer",
     description:
-        "Full Stack (MERN) developer with 2+ years of frontend engineering experience, building scalable dashboards and product-focused web applications with React, Next.js, Node.js, Express.js, and MongoDB.",
-    url: "https://razikuljoni.dev",
-    ogImage: "/opengraph-image",
+        "Full Stack developer specializing in React, Next.js, Node.js, and TypeScript. Building scalable web applications.",
+    url: "https://razikuljoni-portfolio.vercel.app",
+    ogImage: "/images/Website_Home.webp",
     keywords: [
         "software developer",
         "frontend developer",
