@@ -23,7 +23,10 @@ const geistMono = Geist_Mono({
 const ogImageUrl = new URL(siteConfig.ogImage, siteConfig.url).toString();
 
 export const metadata: Metadata = {
-    title: siteConfig.title,
+    title: {
+        default: siteConfig.title,
+        template: `%s | ${siteConfig.shortTitle}`,
+    },
     description: siteConfig.description,
     keywords: siteConfig.keywords,
     metadataBase: new URL(siteConfig.url),
@@ -42,6 +45,7 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: siteConfig.title,
+                type: "image/png",
             },
         ],
     },
@@ -64,6 +68,9 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
+    alternates: {
+        canonical: siteConfig.url,
+    },
 };
 
 export default function RootLayout({
@@ -79,7 +86,22 @@ export default function RootLayout({
                 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
                 <meta name="theme-color" content="#0b0d0e" media="(prefers-color-scheme: dark)" />
                 <meta property="og:logo" content={`${siteConfig.url}/icon.svg`} />
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.webmanifest" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Person",
+                            name: siteConfig.name,
+                            url: siteConfig.url,
+                            jobTitle: "Full Stack Developer",
+                            sameAs: Object.values(siteConfig.social),
+                            email: siteConfig.email,
+                        }),
+                    }}
+                />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `(()=>{try{const e=localStorage.getItem("theme"),t="function"==typeof window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o="light"===e||"dark"===e?e:t?"dark":"light";document.documentElement.classList.toggle("dark","dark"===o),document.documentElement.style.colorScheme=o,document.documentElement.dataset.theme=o}catch(e){}})();`,

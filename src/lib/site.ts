@@ -1,10 +1,11 @@
 export const siteConfig = {
     name: "MD Razikul Islam Joni",
-    title: "MD Razikul Islam Joni — Full Stack / MERN Stack Developer",
+    title: "Razikul Islam Joni | Full Stack Developer",
+    shortTitle: "Razikul Islam Joni",
     description:
         "Full Stack developer specializing in React, Next.js, Node.js, and TypeScript. Building scalable web applications.",
     url: "https://razikuljoni-portfolio.vercel.app",
-    ogImage: "/images/Website_Home.webp",
+    ogImage: "/images/og-image.png",
     keywords: [
         "software developer",
         "frontend developer",
