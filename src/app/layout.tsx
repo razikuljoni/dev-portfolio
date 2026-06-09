@@ -1,7 +1,7 @@
 import AnalyticsClient from "@/src/components/analytics-client";
+import { CommandPaletteProvider } from "@/src/components/command-palette-provider";
 import Header from "@/src/components/header-section";
 import { ThemeProvider } from "@/src/components/theme-provider";
-import { CommandPaletteProvider } from "@/src/components/command-palette-provider";
 import { siteConfig } from "@/src/lib/site";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
@@ -20,11 +20,50 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
+const ogImageUrl = new URL(siteConfig.ogImage, siteConfig.url).toString();
+
 export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     keywords: siteConfig.keywords,
     metadataBase: new URL(siteConfig.url),
+    authors: [{ name: siteConfig.name }],
+    creator: siteConfig.name,
+    openGraph: {
+        title: siteConfig.title,
+        description: siteConfig.description,
+        url: siteConfig.url,
+        siteName: siteConfig.name,
+        type: "website",
+        locale: "en_US",
+        images: [
+            {
+                url: ogImageUrl,
+                width: 1200,
+                height: 630,
+                alt: siteConfig.title,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@razikuljoni",
+        creator: "@razikuljoni",
+        title: siteConfig.title,
+        description: siteConfig.description,
+        images: [ogImageUrl],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
 };
 
 export default function RootLayout({
@@ -39,10 +78,8 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /> */}
                 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
                 <meta name="theme-color" content="#0b0d0e" media="(prefers-color-scheme: dark)" />
-                {/* <Script
-                    id="theme-init"
-                    strategy="beforeInteractive"
-                >{`(()=>{try{var e=localStorage.getItem("theme"),t="function"==typeof window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o="light"===e||"dark"===e?e:t?"dark":"light";document.documentElement.classList.toggle("dark","dark"===o),document.documentElement.style.colorScheme=o,document.documentElement.dataset.theme=o}catch(e){}})();`}</Script> */}
+                <meta property="og:logo" content={`${siteConfig.url}/icon.svg`} />
+                <link rel="manifest" href="/manifest.webmanifest" />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `(()=>{try{const e=localStorage.getItem("theme"),t="function"==typeof window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o="light"===e||"dark"===e?e:t?"dark":"light";document.documentElement.classList.toggle("dark","dark"===o),document.documentElement.style.colorScheme=o,document.documentElement.dataset.theme=o}catch(e){}})();`,

@@ -36,6 +36,30 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Cloudflare / OpenNext
+.wrangler
+.open-next
+
+# AI Tooling & Agent state
+.agent/
+.agents/
+.claude/
+.cline/
+.clinerules/
+.codex/
+.continue/
+.cursor/
+.gemini/
+.omo/
+.pi/
+.qwen/
+.sisyphus/
+.trae/
+.windsurf/
+
+# Knowledge Graph
+graphify-out/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
