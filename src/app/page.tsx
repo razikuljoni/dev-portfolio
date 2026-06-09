@@ -1,6 +1,5 @@
 import { BackgroundPaths } from "@/src/components/background-paths";
 import HeroSection from "@/src/components/hero-section";
-import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 const AboutSection = dynamic(() => import("@/src/components/about-section").then((m) => m.default));
@@ -18,12 +17,6 @@ const GithubSection = dynamic(() =>
 const FooterSection = dynamic(() =>
     import("@/src/components/footer-section").then((m) => m.default),
 );
-
-export const metadata: Metadata = {
-    title: "MD Razikul Islam Joni — Full Stack / MERN Stack Developer",
-    description:
-        "Portfolio of MD Razikul Islam Joni showcasing full stack (MERN) projects, engineering experience, and technical writing.",
-};
 
 export default function Page() {
     return (

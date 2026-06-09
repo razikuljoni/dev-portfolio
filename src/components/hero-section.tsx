@@ -119,7 +119,7 @@ export default function HeroSection() {
                                 priority
                                 fetchPriority="high"
                                 className="h-full w-full rounded-xl object-cover"
-                                src="/images/MD Razikul Islam Joni, Full-stack Developer.webp"
+                                src="/images/MD_Razikul_Islam_Joni-Casual.webp"
                             />
                         </div>
                     </div>
